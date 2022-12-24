@@ -1,0 +1,698 @@
+{
+  "animals": [
+    { "id": 1, "name": "Собаки" },
+    { "id": 2, "name": "Кошки" },
+    { "id": 3, "name": "Грызуны" },
+    { "id": 4, "name": "Птицы" },
+    { "id": 5, "name": "Рыбы" },
+    { "id": 6, "name": "Весь товар" }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Собаки",
+      "type": "Сухой корм",
+      "items": [
+        {
+          "key": 1,
+          "brand": "Royal Canin",
+          "price": "50 000",
+          "status": "В наличии",
+          "picture": "./resources/img.png"
+        },
+        {
+          "key": 2,
+          "brand": "Pee Pee",
+          "price": "70 000",
+          "status": "В наличии",
+          "picture": "./resources/img.png"
+        },
+        {
+          "key": 3,
+          "brand": "Whiscas",
+          "price": "30 000",
+          "status": "Нет в наличии",
+          "picture": "./resources/img.png"
+        },
+        {
+          "key": 4,
+          "brand": "Purina",
+          "price": "110 000",
+          "status": "В наличии",
+          "picture": "./resources/img.png"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Собаки",
+      "type": "Влажный корм",
+      "items": [
+        {
+          "key": 1,
+          "brand": "Royal Canin",
+          "price": "18 000",
+          "status": "В наличии",
+          "picture": "./resources/img2.jpg"
+        },
+        {
+          "key": 2,
+          "brand": "Whiscas",
+          "price": "8 000",
+          "status": "Нет в наличии",
+          "picture": "./resources/img2.jpg"
+        },
+        {
+          "key": 3,
+          "brand": "Purina",
+          "price": "11 000",
+          "status": "Нет в наличии",
+          "picture": "./resources/img2.jpg"
+        },
+        {
+          "key": 4,
+          "brand": "Pee Pee консервы",
+          "price": "10 000",
+          "status": "Нет в наличии",
+          "picture": "./resources/img2.jpg"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Собаки",
+      "type": "Витамины",
+      "items": [
+        {
+          "key": 1,
+          "brand": "Актив Витамин+",
+          "price": "38 000",
+          "status": "В наличии",
+          "picture": "./resources/img2.jpg"
+        },
+        {
+          "key": 2,
+          "brand": "Кальцый3",
+          "price": "8 000",
+          "status": "Нет в наличии",
+          "picture": "./resources/img2.jpg"
+        },
+        {
+          "key": 3,
+          "brand": "Калий",
+          "price": "11 000",
+          "status": "Нет в наличии",
+          "picture": "./resources/img2.jpg"
+        },
+        {
+          "key": 4,
+          "brand": "Группа Б",
+          "price": "10 000",
+          "status": "Нет в наличии",
+          "picture": "./resources/img2.jpg"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Собаки",
+      "type": "Наполнители",
+      "items": [
+        {
+          "key": 1,
+          "brand": "стоп фу(древесный)",
+          "price": "38 000",
+          "status": "В наличии",
+          "picture": "./resources/img2.jpg"
+        },
+        {
+          "key": 2,
+          "brand": "Песок",
+          "price": "8 000",
+          "status": "Нет в наличии",
+          "picture": "./resources/img2.jpg"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Собаки",
+      "type": "Аксессуары",
+      "items": [
+        {
+          "key": 1,
+          "brand": "GSMA(поводок)",
+          "price": "18 000",
+          "status": "В наличии",
+          "picture": "./resources/img2.jpg"
+        },
+        {
+          "key": 2,
+          "brand": "AWER(намордник)",
+          "price": "28 000",
+          "status": "Нет в наличии",
+          "picture": "./resources/img2.jpg"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Кошки",
+      "type": "Сухой корм",
+      "items": [
+        {
+          "key": 1,
+          "brand": "Royal Canin",
+          "price": "50 000",
+          "status": "В наличии",
+          "picture": "./resources/img2.jpg"
+        },
+        {
+          "key": 2,
+          "brand": "Whiscas",
+          "price": "30 000",
+          "status": "Нет в наличии",
+          "picture": "./resources/img2.jpg"
+        },
+        {
+          "key": 3,
+          "brand": "Purina",
+          "price": "110 000",
+          "status": "В наличии",
+          "picture": "./resources/img2.jpg"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Кошки",
+      "type": "Влажный корм",
+      "items": [
+        {
+          "key": 1,
+          "brand": "Royal Canin",
+          "price": "18 000",
+          "status": "В наличии",
+          "picture": "./resources/img2.jpg"
+        },
+        {
+          "key": 2,
+          "brand": "Whiscas",
+          "price": "8 000",
+          "status": "Нет в наличии",
+          "picture": "./resources/img2.jpg"
+        },
+        {
+          "key": 3,
+          "brand": "Purina",
+          "price": "11 000",
+          "status": "Нет в наличии",
+          "picture": "./resources/img2.jpg"
+        },
+        {
+          "key": 4,
+          "brand": "Pee Pee консервы",
+          "price": "10 000",
+          "status": "Нет в наличии",
+          "picture": "./resources/img2.jpg"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Кошки",
+      "type": "Витамины",
+      "items": [
+        {
+          "key": 1,
+          "brand": "Актив Витамин+",
+          "price": "18 000",
+          "status": "В наличии",
+          "picture": "./resources/img2.jpg"
+        },
+        {
+          "key": 2,
+          "brand": "Кальцый3",
+          "price": "8 000",
+          "status": "Нет в наличии",
+          "picture": "./resources/img2.jpg"
+        },
+        {
+          "key": 3,
+          "brand": "Калий",
+          "price": "11 000",
+          "status": "Нет в наличии",
+          "picture": "./resources/img2.jpg"
+        },
+        {
+          "key": 4,
+          "brand": "Группа Б",
+          "price": "12 000",
+          "status": "Нет в наличии",
+          "picture": "./resources/img2.jpg"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Кошки",
+      "type": "Наполнители",
+      "items": [
+        {
+          "key": 1,
+          "brand": "стоп фу(древесный)",
+          "price": "38 000",
+          "status": "В наличии",
+          "picture": "./resources/img2.jpg"
+        },
+        {
+          "key": 2,
+          "brand": "Песок",
+          "price": "8 000",
+          "status": "Нет в наличии",
+          "picture": "./resources/img2.jpg"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Кошки",
+      "type": "Аксессуары",
+      "items": [
+        {
+          "key": 1,
+          "brand": "GSMA(поводок)",
+          "price": "18 000",
+          "status": "В наличии",
+          "picture": "./resources/img2.jpg"
+        },
+        {
+          "key": 2,
+          "brand": "AWER(расчестка)",
+          "price": "28 000",
+          "status": "Нет в наличии",
+          "picture": "./resources/img2.jpg"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Грызуны",
+      "type": "Сухой корм",
+      "items": [
+        {
+          "key": 1,
+          "brand": "Royal Canin",
+          "price": "50 000",
+          "status": "В наличии",
+          "picture": "./resources/img2.jpg"
+        },
+        {
+          "key": 2,
+          "brand": "Whiscas",
+          "price": "30 000",
+          "status": "Нет в наличии",
+          "picture": "./resources/img2.jpg"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Грызуны",
+      "type": "Витамины",
+      "items": [
+        {
+          "key": 1,
+          "brand": "Актив Витамин+",
+          "price": "18 000",
+          "status": "В наличии",
+          "picture": "./resources/img2.jpg"
+        },
+        {
+          "key": 2,
+          "brand": "Кальцый3",
+          "price": "8 000",
+          "status": "Нет в наличии",
+          "picture": ""
+        },
+        {
+          "key": 3,
+          "brand": "Калий",
+          "price": "11 000",
+          "status": "Нет в наличии",
+          "picture": ""
+        },
+        {
+          "key": 4,
+          "brand": "Группа Б",
+          "price": "12 000",
+          "status": "Нет в наличии",
+          "picture": ""
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Грызуны",
+      "type": "Наполнители",
+      "items": [
+        {
+          "key": 1,
+          "brand": "стоп фу(древесный)",
+          "price": "38 000",
+          "status": "В наличии",
+          "picture": ""
+        },
+        {
+          "key": 2,
+          "brand": "Опилки",
+          "price": "8 000",
+          "status": "Нет в наличии",
+          "picture": ""
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Грызуны",
+      "type": "Аксессуары",
+      "items": [
+        {
+          "key": 1,
+          "brand": "GSMA(Колесо)",
+          "price": "18 000",
+          "status": "В наличии",
+          "picture": ""
+        },
+        {
+          "key": 2,
+          "brand": "AWER(расчестка)",
+          "price": "28 000",
+          "status": "Нет в наличии",
+          "picture": ""
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Птицы",
+      "type": "Сухой корм",
+      "items": [
+        {
+          "key": 1,
+          "brand": "Royal Canin",
+          "price": "50 000",
+          "status": "В наличии",
+          "picture": ""
+        },
+        {
+          "key": 2,
+          "brand": "Whiscas",
+          "price": "30 000",
+          "status": "Нет в наличии",
+          "picture": ""
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Птицы",
+      "type": "Витамины",
+      "items": [
+        {
+          "key": 1,
+          "brand": "Актив Витамин+",
+          "price": "18 000",
+          "status": "В наличии",
+          "picture": ""
+        },
+        {
+          "key": 2,
+          "brand": "Кальцый3",
+          "price": "8 000",
+          "status": "Нет в наличии",
+          "picture": ""
+        },
+        {
+          "key": 3,
+          "brand": "Калий",
+          "price": "11 000",
+          "status": "Нет в наличии",
+          "picture": ""
+        },
+        {
+          "key": 4,
+          "brand": "Группа Б",
+          "price": "12 000",
+          "status": "Нет в наличии",
+          "picture": ""
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Птицы",
+      "type": "Наполнители",
+      "items": [
+        {
+          "key": 1,
+          "brand": "стоп фу(древесный)",
+          "price": "38 000",
+          "status": "В наличии",
+          "picture": ""
+        },
+        {
+          "key": 2,
+          "brand": "Опилки",
+          "price": "8 000",
+          "status": "Нет в наличии",
+          "picture": ""
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Птицы",
+      "type": "Аксессуары",
+      "items": [
+        {
+          "key": 1,
+          "brand": "GSMA(Клетки)",
+          "price": "18 000",
+          "status": "В наличии",
+          "picture": ""
+        },
+        {
+          "key": 2,
+          "brand": "AWER(Ветка)",
+          "price": "28 000",
+          "status": "Нет в наличии",
+          "picture": ""
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Рыбы",
+      "type": "Сухой корм",
+      "items": [
+        {
+          "key": 1,
+          "brand": "Royal Canin",
+          "price": "50 000",
+          "status": "В наличии",
+          "picture": ""
+        },
+        {
+          "key": 2,
+          "brand": "Whiscas",
+          "price": "30 000",
+          "status": "Нет в наличии",
+          "picture": ""
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Рыбы",
+      "type": "Витамины",
+      "items": [
+        {
+          "key": 1,
+          "brand": "Актив Витамин+",
+          "price": "18 000",
+          "status": "В наличии",
+          "picture": ""
+        },
+        {
+          "key": 2,
+          "brand": "Кальцый3",
+          "price": "8 000",
+          "status": "Нет в наличии",
+          "picture": ""
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Рыбы",
+      "type": "Наполнители",
+      "items": [
+        {
+          "key": 1,
+          "brand": "стоп фу(древесный)",
+          "price": "38 000",
+          "status": "В наличии",
+          "picture": ""
+        },
+        {
+          "key": 2,
+          "brand": "Опилки",
+          "price": "8 000",
+          "status": "Нет в наличии",
+          "picture": ""
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Рыбы",
+      "type": "Аксессуары",
+      "items": [
+        {
+          "key": 1,
+          "brand": "GSMA(Клетки)",
+          "price": "18 000",
+          "status": "В наличии",
+          "picture": ""
+        },
+        {
+          "key": 2,
+          "brand": "AWER(Ветка)",
+          "price": "28 000",
+          "status": "Нет в наличии",
+          "picture": ""
+        }
+      ]
+    }
+  ],
+  "bestProducts":[{
+    "id": 1,
+    "brand": "Pi-Pi Bent 'Корм для кошек'",
+    "price": "50 000",
+    "status": "В наличии",
+    "picture": "./resources/prod.png"
+  },{
+    "id": 2,
+    "brand": "Pi-Pi Bent 'Корм для кошек'",
+    "price": "50 000",
+    "status": "В наличии",
+    "picture": "./resources/prod.png"
+  },{
+    "id": 3,
+    "brand": "Pi-Pi Bent 'Корм для кошек'",
+    "price": "50 000",
+    "status": "В наличии",
+    "picture": "./resources/prod.png"
+  },{
+    "id": 4,
+    "brand": "Pi-Pi Bent 'Корм для кошек'",
+    "price": "50 000",
+    "status": "В наличии",
+    "picture": "./resources/prod.png"
+  },{
+    "id": 5,
+    "brand": "Pi-Pi Bent 'Корм для кошек'",
+    "price": "50 000",
+    "status": "В наличии",
+    "picture": "./resources/prod.png"
+  },{
+    "id": 6,
+    "brand": "Pi-Pi Bent 'Корм для кошек'",
+    "price": "50 000",
+    "status": "В наличии",
+    "picture": "./resources/prod.png"
+  },{
+    "id": 7,
+    "brand": "Pi-Pi Bent 'Корм для кошек'",
+    "price": "50 000",
+    "status": "В наличии",
+    "picture": "./resources/prod.png"
+  },{
+    "id": 8,
+    "brand": "Pi-Pi Bent 'Корм для кошек'",
+    "price": "50 000",
+    "status": "В наличии",
+    "picture": "./resources/prod.png"
+  },{
+    "id": 9,
+    "brand": "Pi-Pi Bent 'Корм для кошек'",
+    "price": "50 000",
+    "status": "В наличии",
+    "picture": "./resources/prod.png"
+  }],
+  "bestSales":[{
+    "id": 1,
+    "brand": "Кузя 'Корм для кошек'",
+    "price": "50 000",
+    "prevPrice":"75 000",
+    "status": "В наличии",
+    "picture": "./resources/kuz.png"
+  },{
+    "id": 2,
+    "brand": "Кузя 'Корм для кошек'",
+    "price": "50 000",
+    "prevPrice":"75 000",
+    "status": "В наличии",
+    "picture": "./resources/kuz.png"
+  },{
+    "id": 3,
+    "brand": "Кузя 'Корм для кошек'",
+    "price": "50 000",
+    "prevPrice":"75 000",
+    "status": "В наличии",
+    "picture": "./resources/kuz.png"
+  },{
+    "id": 4,
+    "brand": "Кузя 'Корм для кошек'",
+    "price": "50 000",
+    "prevPrice":"75 000",
+    "status": "В наличии",
+    "picture": "./resources/kuz.png"
+  },{
+    "id": 5,
+    "brand": "Кузя 'Корм для кошек'",
+    "price": "50 000",
+    "prevPrice":"75 000",
+    "status": "В наличии",
+    "picture": "./resources/kuz.png"
+  },{
+    "id": 6,
+    "brand": "Кузя 'Корм для кошек'",
+    "price": "50 000",
+    "prevPrice":"75 000",
+    "status": "В наличии",
+    "picture": "./resources/kuz.png"
+  },{
+    "id": 7,
+    "brand": "Кузя 'Корм для кошек'",
+    "price": "50 000",
+    "prevPrice":"75 000",
+    "status": "В наличии",
+    "picture": "./resources/kuz.png"
+  },{
+    "id": 8,
+    "brand": "Кузя 'Корм для кошек'",
+    "price": "50 000",
+    "prevPrice":"75 000",
+    "status": "В наличии",
+    "picture": "./resources/kuz.png"
+  },{
+    "id": 9,
+    "brand": "Кузя 'Корм для кошек'",
+    "price": "50 000",
+    "prevPrice":"75 000",
+    "status": "В наличии",
+    "picture": "./resources/kuz.png"
+  }]
+}
