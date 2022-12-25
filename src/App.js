@@ -1,6 +1,5 @@
 import "./App.css";
 import {
-  BrowserRouter,
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";

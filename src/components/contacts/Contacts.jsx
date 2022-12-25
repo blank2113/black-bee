@@ -36,7 +36,7 @@ function Contacts() {
     zoom: 16,
   };
   return (
-    <motion.section initial='hidden' whileInView='visible' className="contacts">
+    <motion.section initial='hidden' whileInView='visible' id='contact' className="contacts">
     <div className="contacts-inner container">
       <motion.h6 custom={1} variants={textAnimation} className="title">Где мы находимся?</motion.h6>
       <div className="contacts-inner__wrapper">

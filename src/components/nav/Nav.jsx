@@ -2,10 +2,16 @@ import { useState } from "react";
 import "./nav.css";
 import NavItem from "./navItem/NavItem";
 
-const menuData = ["Главная", "Товары", "О нас", "Контакты"];
+
+const menuData = [{"id":1,
+"name": "Главня","href":"main"}, {"id":2,
+"name": "Товары","href":"goods"}, {"id":3,
+"name": "О нас","href":"about"}, {"id":4,
+"name": "Контакты","href":"contact"}];
 
 function Nav({ active, setActive }) {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(1);
+  // console.log(menuData);
   return (
     <div
       className={active ? "nav active" : "nav"}
@@ -14,10 +20,10 @@ function Nav({ active, setActive }) {
       <div className="blur" />
       <div className="nav-content" onClick={(e) => e.stopPropagation()}>
         {menuData.map((item, index) => (
-          <NavItem key={item}
+          <NavItem key={item.index}
           item={item}
-          isSelected={activeIndex === index}
-          handleClick={()=> setActiveIndex(index)}
+          isSelected={activeIndex === item.id}
+          handleClick={()=> setActiveIndex(item.id)}
           />
         ))}
               </div>

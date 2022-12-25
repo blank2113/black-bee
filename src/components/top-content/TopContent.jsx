@@ -2,6 +2,7 @@ import "./topContent.css";
 import animals from "../../assets/img1.png";
 import { motion } from "framer-motion";
 
+
 const textAnimation = {
   hidden: {
     x: -100,
@@ -32,6 +33,7 @@ function TopContent() {
       initial="hidden"
       whileInView="visible"
       className="top-content"
+      id="main"
     >
       <div className="top-content-inner container">
         <div className="top-content-text">
@@ -45,7 +47,7 @@ function TopContent() {
           <motion.a
             custom={2}
             variants={imgAnimation}
-            href="#as"
+            href="#goods"
             className="button-see"
           >
             Посмотреть товары

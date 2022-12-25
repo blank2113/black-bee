@@ -1,17 +1,20 @@
 import Header from "../components/header/Header";
 import TopContent from "../components/top-content/TopContent";
-import "./mainPage.css";
-
+import "./MainPage.css";
+import {motion} from 'framer-motion'
 import Catalog from "../components/catalog/Catalog";
 import BestProducts from "../components/bestProducts/BestProducts";
 import BestSales from "../components/bestSales/BestSales";
 import Contacts from "../components/contacts/Contacts";
 import Footer from "../components/footer/Footer";
 
-function MainPage() {
 
+function MainPage() {
   return (
-    <div className="main-page">
+    <motion.div 
+    initial={{opacity:0}}
+    whileInView={{opacity:1}}
+    className="main-page">
       <Header />
       <TopContent />
       <Catalog/>
@@ -19,7 +22,7 @@ function MainPage() {
       <BestSales/>
       <Contacts/>
       <Footer/>
-    </div>
+    </motion.div>
   );
 }
 

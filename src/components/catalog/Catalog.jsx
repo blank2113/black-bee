@@ -38,6 +38,7 @@ function Catalog() {
       initial="hidden"
       variants={blockAnimation}
       whileInView="visible"
+      id="goods"
     >
       <div className="catalog-inner container">
         <motion.h2 variants={textAnimation} custom={2} className="title">

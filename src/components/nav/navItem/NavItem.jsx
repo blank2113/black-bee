@@ -2,20 +2,28 @@ import React from "react";
 import { motion } from "framer-motion";
 import ActiveLine from "../activeLine/ActiveLine";
 import "./navItem.css"
+import { Link } from "react-scroll";
+
 
 function NavItem(props) {
   const { item, isSelected, handleClick = Function.prototype } = props;
-
+console.log(item);
   return (
     <motion.div
-      onClick={handleClick}
+      onHoverStart={handleClick}
       initial={{ color: "#000" }}
-      animate={{ color: isSelected ? "rgba(255,255,255)" : "#000" }}
+      animate={{ color: isSelected  ? "rgba(255,255,255)" : "#000" }}
       className="nav-content__list list"
       style={{ position: "relative" }}
     >
-      {isSelected && <ActiveLine />}
-      {<a href="#aa" className="nav-content__list-item list-item">{item}</a>}
+      {isSelected && <ActiveLine /> }
+      {<Link  
+    to={item.href}
+    spy={true}
+    smooth={true}
+    offset={-70}
+    duration= {500} >{item.name}</Link>}
+      
     </motion.div>
   );
 }
