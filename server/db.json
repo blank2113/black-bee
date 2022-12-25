@@ -694,5 +694,9 @@
     "prevPrice":"75 000",
     "status": "В наличии",
     "picture": "./resources/kuz.png"
-  }]
+  }],
+  "password":[
+    {"id":1,
+    "password":12345}
+  ]
 }

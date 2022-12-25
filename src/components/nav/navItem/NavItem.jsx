@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import ActiveLine from "../activeLine/ActiveLine";
+import "./navItem.css"
 
 function NavItem(props) {
   const { item, isSelected, handleClick = Function.prototype } = props;
@@ -14,7 +15,7 @@ function NavItem(props) {
       style={{ position: "relative" }}
     >
       {isSelected && <ActiveLine />}
-      {<a href="#aa">{item}</a>}
+      {<a href="#aa" className="nav-content__list-item list-item">{item}</a>}
     </motion.div>
   );
 }

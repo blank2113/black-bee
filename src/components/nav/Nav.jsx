@@ -20,31 +20,7 @@ function Nav({ active, setActive }) {
           handleClick={()=> setActiveIndex(index)}
           />
         ))}
-        {/* <motion.ul className="nav-content__list list" onClick={()=>setActiveIndex()}>
-          <li className="list__item">
-            <a href="#home" className="list__link">
-              Главная
-            </a>
-          </li>
-          <li className="list__item">
-            <a href="#goods" className="list__link">
-              Товары
-            </a>
-          </li>
-
-          <li className="list__item">
-            <a href="#about" className="list__link">
-              О нас
-            </a>
-          </li>
-
-          <li className="list__item">
-            <a href="#contacts" className="list__link">
-              Контакты
-            </a>
-          </li>
-        </motion.ul> */}
-      </div>
+              </div>
     </div>
   );
 }

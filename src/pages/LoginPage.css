@@ -1,0 +1,56 @@
+.login-page__inner {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+  .login-inner__logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .login-inner__logo img {
+    display: block;
+    margin: 0 auto;
+  }
+  .login-inner__logo-title {
+    font-weight: 800;
+    text-transform: uppercase;margin-bottom: 30px;
+  }
+  .login-page__inner-wrapper {
+    width: 350px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.694);
+    color: #fff;
+    border-radius: 20px;
+    -webkit-box-shadow: 3px 4px 42px 9px rgba(20, 20, 21, 0.31);
+    -moz-box-shadow: 3px 4px 42px 9px rgba(20, 20, 21, 0.31);
+    box-shadow: 3px 4px 42px 9px rgba(20, 20, 21, 0.31);
+  }
+  .login-page__inner-wrapper input{
+      border-radius: 12px;
+      margin: 30px 0;
+      padding: 0 10px;
+      -webkit-box-shadow: 3px 4px 42px -30px rgba(215, 221, 225, 0.31);
+      -moz-box-shadow: 3px 4px 42px -30px rgba(215, 221, 225, 0.31);
+      box-shadow: 3px 4px 42px -30px rgba(215, 221, 225, 0.31);
+  }
+  .login-page__inner-wrapper button{
+      background: linear-gradient(99.8deg, #fa5353 22.35%, #cf5555 65.92%);
+      border-radius: 12px;
+      color: #fff;
+      font-weight: 500;
+      font-size: 20px;
+      padding: 2px 20px;
+      border: #cf5555;
+      cursor: pointer;
+  }

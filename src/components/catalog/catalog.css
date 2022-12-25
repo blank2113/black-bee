@@ -1,7 +1,7 @@
 .catalog-inner{
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    /* gap: 50px; */
     padding: 70px 0;
 }
 .catalog-inner__sub-title{
@@ -15,6 +15,7 @@
     padding: 0 20px;
     font-size: 25px;
     font-weight: 700;
+    margin-bottom: 50px;
 }
 .catalog-inner__nav{
     width: 100%;
@@ -23,4 +24,5 @@
     border-radius: 66px;
     font-size: 22px;
     font-weight: 500;
+    margin-bottom: 50px;
 }

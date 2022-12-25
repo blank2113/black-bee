@@ -1,0 +1,11 @@
+.list{
+     display: flex;
+     align-items: center;
+     
+}
+.list:nth-child(2){
+margin:0 30px;
+}
+.list:nth-child(3){
+    margin-right:  30px;
+}

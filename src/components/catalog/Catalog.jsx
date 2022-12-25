@@ -57,6 +57,7 @@ function Catalog() {
         <div>
           <Products />
         </div>
+      
       </div>
     </motion.section>
   );
