@@ -6,6 +6,7 @@ import { bestSalesApi } from "./bestSalesApi";
 import { passwordApi } from "./passwordApi";
 import getTypeReducer from "./getType";
 import getInputValueReducer from './getInputValue'
+import getAsideItemReducer from './getAsideItem';
 
 
 export const store = configureStore({
@@ -15,6 +16,7 @@ export const store = configureStore({
     [bestProductsApi.reducerPath]: bestProductsApi.reducer,
     [bestSalesApi.reducerPath]: bestSalesApi.reducer,
     [passwordApi.reducerPath]: passwordApi.reducer,
+    getAsideItem: getAsideItemReducer,
     getInputValue: getInputValueReducer,
     getType: getTypeReducer,
     
