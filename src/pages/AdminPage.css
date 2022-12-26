@@ -14,7 +14,7 @@
 .admin-page-inner__wrapper{
     display: flex;
     align-items: flex-start;
-    justify-content: flex-start;
+    justify-content: space-between;
     width: 100%;
     padding: 15px;
 }

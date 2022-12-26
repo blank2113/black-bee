@@ -3,6 +3,7 @@ import './AdminPage.css';
 import {motion} from 'framer-motion'
 import AdminHeader from '../components/adminHeader/AdminHeader'
 import AsideMenu from '../components/asideMenu/AsideMenu';
+import EditPanel from '../components/editPanel/EditPanel';
 
 
 const blockAnimation ={
@@ -24,6 +25,7 @@ function AdminPage() {
         <AdminHeader/>
         <motion.div className='admin-page-inner__wrapper'>
           <AsideMenu/>
+          <EditPanel/>
         </motion.div>
       </motion.div>
     </motion.div>
