@@ -7,6 +7,7 @@ import { passwordApi } from "./passwordApi";
 import getTypeReducer from "./getType";
 import getInputValueReducer from './getInputValue'
 import getAsideItemReducer from './getAsideItem';
+import getCategoriesReducer from "./getCategories";
 
 
 export const store = configureStore({
@@ -18,6 +19,7 @@ export const store = configureStore({
     [passwordApi.reducerPath]: passwordApi.reducer,
     getAsideItem: getAsideItemReducer,
     getInputValue: getInputValueReducer,
+    getCategories: getCategoriesReducer,
     getType: getTypeReducer,
     
 

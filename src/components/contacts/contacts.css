@@ -26,17 +26,24 @@
     flex-direction: column;
     gap: 10px;
 }
+.contacts-inner__content-list-item:nth-child(2){
+    margin: 20px 0;
+}
+
 .sub-title{
     font-weight: 700;
+    margin-bottom: 5px;
 }
 .socials{
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 40px;
 }
 .socials img{
     width: 30px;
+}
+.instagram{
+    margin-left: 20px;
 }
 .ymaps-2-1-79-gototech{
     display:none !important;

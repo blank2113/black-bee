@@ -10,8 +10,6 @@ function Menu() {
   const { data = [], isLoading,isFetching } = useGetAnimalsQuery({},{pollingInterval: 3000,
     refetchOnMountOrArgChange: true,
     skip: false, });
-  console.log(getType);
-  console.log(data);
   if (isLoading) return <h3>Loading...</h3>;
   return (
     <ul className="menu">

@@ -54,7 +54,7 @@ function Contacts() {
               <p className='sub-title'>Мы в соц. сетях:</p>
               <div className="socials">
                 <img src={telegram} alt="telegram" />
-                <img src={insta} alt="telegram" />
+                <img src={insta} alt="instagram" className='instagram'/>
               </div>
             </motion.li>
           </ul>
