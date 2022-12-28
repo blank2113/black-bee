@@ -11,7 +11,7 @@ function AdminHeader() {
 
   return (
     <div className='admin-header'>
-        <div className='admin-header-inner container'>
+        <div className='admin-header-inner '>
             <div className='admin-header-inner__logo'>
                 <img src={logo2} alt="admin-logo" />
                 <p>black bee | zoomarket</p>
