@@ -10,7 +10,7 @@
     display: flex;
     align-items: center;
 }
-.header-inner__logo-title{
+.header-inner__logo p{
     font-weight: 900;
     font-size: 20px;
     text-transform: uppercase;
@@ -22,14 +22,16 @@
 }
 
 @media (max-width: 1024px){
-    .header-inner__logo img{
+    /* .header-inner__logo img{
         width: 65%;
-    }
-    .header-inner__logo-title{
+    } */
+    
+}
+@media (max-width: 920px){
+    .header-inner__logo p{
         display: none;
     }
 }
-
 
 @media (max-width: 768px){
     .header{

@@ -19,7 +19,7 @@ function Nav({ active, setActive }) {
     >
       <div className="blur" />
       <div className="nav-content" onClick={(e) => e.stopPropagation()}>
-        {menuData.map((item, index) => (
+        {menuData.map((item) => (
           <NavItem key={item.index}
           item={item}
           isSelected={activeIndex === item.id}

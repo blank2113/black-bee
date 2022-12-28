@@ -17,3 +17,24 @@
     background-color: #FFB100;
     color: #fff;
 }
+
+@media (max-width: 1024px){
+    .menu-item{
+        font-size: 18px;
+    }
+    .menu{
+        flex-wrap: wrap;
+    }
+}
+@media (max-width: 768px){
+    .menu-item{
+        font-size: 18px;
+    }
+    .menu{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+}
