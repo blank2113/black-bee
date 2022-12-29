@@ -27,9 +27,9 @@
     flex-wrap: wrap;
     width: 100%;
     gap: 50px;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    padding: 20px 50px;
+    padding: 20px 0px;
     margin:  50px 0;
 }
 .products-inner__card-wrapper li{
@@ -58,4 +58,10 @@
     font-weight: 500;
     color: rgb(19, 134, 19);
     
+}
+
+@media (max-width: 768px){
+    .products{
+        padding: 10px;
+    }
 }
