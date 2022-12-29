@@ -19,3 +19,12 @@
     background-color: #000;
     color: #fff;
 }
+@media (max-width:1200px){
+    .categories{
+        font-size: 16px;
+        margin: 0 0 0 10px;
+        padding: 15px;
+        border-radius: 22px;
+        
+    }
+}

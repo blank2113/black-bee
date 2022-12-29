@@ -5,3 +5,9 @@ th{
     text-align: center;
     border-bottom: 1px solid #000;
 }
+
+@media (max-width:1200px){
+    thead{
+        font-size: 16px;
+    }
+}

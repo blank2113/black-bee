@@ -38,3 +38,15 @@
         text-align: center;
     }
 }
+
+@media (max-width: 500px){
+    .menu-item{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 375px){
+    .menu-item{
+        font-size: 13px;
+    }
+}

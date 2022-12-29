@@ -15,25 +15,35 @@
 .swiper-scrollbar-drag{
     background-color: #000 !important;
 }
-  .swiper-button-next{
-   background: url('../../assets/Group 13 (1).png');
-   background-repeat: no-repeat;
-   background-size: contain;
-   cursor: pointer;
-   /* margin-right: 30px; */
-  }
+.swiper-card__curr{
+  padding: 10px;
+}
+ .swiper-button-next{
+  background: url('../../assets/Group 13 (1).png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* margin-right: 30px; */
+  cursor: pointer;
+ }
+ .swiper-button-next::after{
+  display: none;
+ }
+ 
   .swiper-button-prev{
     background: url('../../assets/Group 14 (1).png');
     background-repeat: no-repeat;
     background-size: contain;
-    /* margin-right: 30px; */
     cursor: pointer;
+   }
+   .swiper-button-prev::after{
+    display: none;
    }
   .swiper-slide {
     text-align: center;
     font-size: 18px;
     background: transparent;
-    height: 400px;
+    padding: 30px;
+    height: 420px;
     /* Center slide text vertically */
     display: -webkit-box;
     display: -ms-flexbox;
@@ -57,7 +67,7 @@
   } */
   .swiper-slide img {
     display: block;
-    width: 100%;
+    width: 90%;
     height: auto;
     object-fit: cover;
   }
@@ -66,7 +76,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
     background-color: #fff;
     /* width: 0% !important; */
     height: 350px !important;
@@ -100,7 +109,7 @@
   }
   @media (max-width: 550px){
     .swiper-card img{
-      width: 60%;
+      width: 50%;
       height: 100%;
     }
     .swiper-card__curr{
@@ -115,7 +124,7 @@
   }
   @media (max-width: 420px){
     .swiper-card img{
-      width: 80%;
+      width: 60%;
       height: 100%;
     }
     .swiper-card__curr{
