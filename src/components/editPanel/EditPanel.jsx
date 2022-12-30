@@ -28,7 +28,7 @@ function EditPanel() {
                 <FontAwesomeIcon icon={faXmark}/>
                 <p>Удалить</p> 
             </motion.a>
-            {as === true ?  <div><input type="text" placeholder='asd'/></div> : null}
+            {as === true ?  <div className='lik'><input type="text" placeholder='asd'/></div> : null}
         </div>
     </motion.div>
   )

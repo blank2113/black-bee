@@ -5,7 +5,7 @@ import { faList } from '@fortawesome/free-solid-svg-icons'
 import { faCoins } from '@fortawesome/free-solid-svg-icons'
 import { faPercent } from '@fortawesome/free-solid-svg-icons'
 import { useSelector, useDispatch} from 'react-redux'
-import { getItem } from '../../store/getAsideItem'
+import { getItem } from '../../store/slices/getAsideItem'
 
 
 

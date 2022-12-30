@@ -2,7 +2,7 @@ import React from 'react'
 import './categories.css'
 import {useGetProductsQuery } from '../../store';
 import { useSelector, useDispatch} from 'react-redux'
-import {getCategoriesItem} from '../../store/getCategories'
+import {getCategoriesItem} from '../../store/slices/getCategories'
 
 function Categories() {
     const getCategories = useSelector(state => state.getCategories.value);

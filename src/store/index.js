@@ -1,4 +1,4 @@
 export * from './store';
-export * from './animalsApi';
+export * from './middlewares/animalsApi';
 export * from './productsApi';
 export * from './bestProductApi'

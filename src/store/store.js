@@ -1,13 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { animalsApi } from "./animalsApi";
-import { productsApi } from "./productsApi";
-import { bestProductsApi } from "./bestProductApi";
-import { bestSalesApi } from "./bestSalesApi";
-import { passwordApi } from "./passwordApi";
-import getTypeReducer from "./getType";
-import getInputValueReducer from './getInputValue'
-import getAsideItemReducer from './getAsideItem';
-import getCategoriesReducer from "./getCategories";
+import { animalsApi } from "./middlewares/animalsApi";
+import { productsApi } from "./middlewares/productsApi";
+import { bestProductsApi } from "./middlewares/bestProductApi";
+import { bestSalesApi } from "./middlewares/bestSalesApi";
+import { passwordApi } from "./middlewares/passwordApi";
+import getTypeReducer from "./slices/getType";
+import getInputValueReducer from './slices/getInputValue'
+import getAsideItemReducer from './slices/getAsideItem';
+import getCategoriesReducer from "./slices/getCategories";
+import getStatusReducer from "./slices/getStatus";
 
 
 export const store = configureStore({
@@ -21,7 +22,7 @@ export const store = configureStore({
     getInputValue: getInputValueReducer,
     getCategories: getCategoriesReducer,
     getType: getTypeReducer,
-    
+    getStatus: getStatusReducer,
 
   },
   middleware: (getDefaultMiddleWare) =>

@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import logo2 from '../assets/logo2.svg';
 import "./LoginPage.css";
 import {useSelector, useDispatch} from 'react-redux';
-import { useGetPasswordQuery } from '../store/passwordApi';
-import {getInput} from '../store/getInputValue'
+import { useGetPasswordQuery } from '../store/middlewares/passwordApi';
+import {getInput} from '../store/slices/getInputValue'
 import {motion} from 'framer-motion'
 
 const logoAnimated ={hidden:{
