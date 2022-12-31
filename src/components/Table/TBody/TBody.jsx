@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import "./tBody.css";
 import { useSelector } from "react-redux";
-import { useGetProductsQuery } from "../../../store";
+import { useGetProductsQuery } from "../../../store/middlewares/productsApi";
 
 const container = {
   hiden: {

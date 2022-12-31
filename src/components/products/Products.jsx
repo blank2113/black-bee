@@ -1,5 +1,5 @@
 import React from "react";
-import { useGetProductsQuery } from "../../store";
+import { useGetProductsQuery } from "../../store/middlewares/productsApi";
 import { useSelector } from "react-redux";
 import "./products.css";
 

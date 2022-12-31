@@ -1,9 +1,9 @@
 import React from 'react'
 import './table.css'
 import THead from './THead/THead'
-import { useGetBestProductsQuery } from '../../store/bestProductApi';
-import { useGetProductsQuery } from '../../store';
-import { useGetBestSalesQuery } from '../../store/bestSalesApi';
+import { useGetBestProductsQuery } from '../../store/middlewares/bestProductApi';
+import { useGetProductsQuery } from '../../store/middlewares/productsApi';
+import { useGetBestSalesQuery } from '../../store/middlewares/bestSalesApi';
 import {useSelector, useDispatch} from 'react-redux';
 import TBody from './TBody/TBody';
 import {motion} from 'framer-motion'

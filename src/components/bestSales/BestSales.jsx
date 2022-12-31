@@ -5,8 +5,7 @@ import "swiper/css/navigation";
 import "./bestSales.css";
 import SwiperCore, { Scrollbar } from "swiper/core";
 import { Pagination, Navigation } from "swiper";
-import { useGetBestSalesQuery } from "../../store/bestSalesApi";
-import { EffectFade } from "swiper";
+import { useGetBestSalesQuery } from "../../store/middlewares/bestSalesApi";
 
 function BestSales() {
   const { data = [] } = useGetBestSalesQuery();

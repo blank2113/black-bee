@@ -1,6 +1,6 @@
 import React from 'react'
 import './categories.css'
-import {useGetProductsQuery } from '../../store';
+import {useGetProductsQuery } from '../../store/middlewares/productsApi';
 import { useSelector, useDispatch} from 'react-redux'
 import {getCategoriesItem} from '../../store/slices/getCategories'
 
