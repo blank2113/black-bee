@@ -16,8 +16,8 @@ function Menu() {
       {data.map((item) => (
         <li
           key={item.id}
-          className={getType === item.name ? "menu-item active" : "menu-item"}
-          onClick={() => dispatch(getName(item.name))}
+          className={getType === item.id ? "menu-item active" : "menu-item"}
+          onClick={() => dispatch(getName(item.id))}
         >
           {item.name}
         </li>

@@ -6,7 +6,6 @@ import { Link } from "react-scroll";
 
 function NavItem(props) {
   const { item, isSelected, handleClick = Function.prototype } = props;
-  console.log(item);
   return (
     <motion.div
       onHoverStart={handleClick}

@@ -29,12 +29,13 @@ const itemA = {
 function TBody({ data }) {
   const { data: product = [] } = useGetProductsQuery();
   const getCategories = useSelector((state) => state.getCategories.value);
-
+  console.log();
   return (
     <motion.tbody initial="hiden" animate="show" variants={container}>
       {data === product
         ? data
-            .filter((el) => getCategories === el.type)
+            .filter((el) => el.type)
+            .filter((e) => e.type.name === getCategories)
             .map((item) => (
               <motion.tr
                 variants={itemA}
@@ -44,21 +45,17 @@ function TBody({ data }) {
                 key={item.id}
               >
                 <td>{item.id}</td>
+                <td>{item.category? item.category.name : null}</td>
                 <td>{item.name}</td>
                 <td>
-                  {item.items.map((el) => (
-                    <td className="brand" key={el.id}>{el.brand}</td>
-                  ))}
+                  {item.price}
                 </td>
                 <td>
-                  {item.items.map((el) => (
-                    <td className="price" key={el.id}>{el.price}</td>
-                  ))}
-                </td>
-                <td>
-                  {item.items.map((el) => (
-                    <td className="status" key={el.id}>{el.status}</td>
-                  ))}
+                  {/* {item.items.map((el) => (
+                    <td className="status" key={el.id}>
+                      {el.status}
+                    </td>
+                  ))} */}
                 </td>
               </motion.tr>
             ))
@@ -66,9 +63,9 @@ function TBody({ data }) {
             <tr key={item.id}>
               <td>{item.id}</td>
               <td>{item.name}</td>
-              <td>{item.prevPrice ? item.prevPrice : "---"}</td>
+              {/* <td>{item.prevPrice ? item.prevPrice : "---"}</td> */}
               <td>{item.price}</td>
-              <td>{item.status}</td>
+              {/* <td>{item.status}</td> */}
             </tr>
           ))}
     </motion.tbody>

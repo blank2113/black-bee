@@ -13,7 +13,7 @@ function Table() {
   
   const {data:products=[]} = useGetProductsQuery();
 
-  const {data:bestProducts=[],isError} = useGetBestProductsQuery();
+  const {data:bestProducts=[]} = useGetBestProductsQuery();
   const {data: bestSales=[]} = useGetBestSalesQuery();
   const getAsideItemName = useSelector(state => state.getAsideItem.value)
 

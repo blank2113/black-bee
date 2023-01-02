@@ -10,7 +10,10 @@ import { Pagination, Navigation } from "swiper";
 import { useGetBestProductsQuery } from "../../store/middlewares/bestProductApi";
 
 function BestProducts() {
-  const { data = [] } = useGetBestProductsQuery();
+  const { data = [] } = useGetBestProductsQuery(
+    {},
+    { pollingInterval: 3000, refetchOnMountOrArgChange: true, skip: false }
+  );
   return (
     <section className="best-products">
       <div className="container">
@@ -48,6 +51,7 @@ function BestProducts() {
           {data.map((item) => (
             <SwiperSlide className="swiper-card" key={item.id}>
               <img src={item.picture} alt="bestProducts-img" />
+              <p className="text">{item.name}</p>
               <p className="swiper-card__curr">{item.price} сум</p>
             </SwiperSlide>
           ))}

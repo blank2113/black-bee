@@ -7,6 +7,8 @@ import AsideMenu from '../components/asideMenu/AsideMenu';
 import EditPanel from '../components/editPanel/EditPanel';
 import Table from '../components/Table/Table';
 import Categories from '../components/categories/Categories';
+import AddProdWindow from '../components/addProdWindow/AddProdWindow';
+
 
 
 const blockAnimation ={
@@ -39,7 +41,8 @@ export const variants = {
   }
 };
 function AdminPage() {
-  
+  const getStatus = useSelector(state => state.getStatus.value)
+  console.log(getStatus);
   const getAsideItem = useSelector(state => state.getAsideItem.value)
   return (
     <motion.div initial={{opacity:0}} whileInView={{opacity:1}} className="admin-page">
@@ -57,6 +60,7 @@ function AdminPage() {
           <Table/>
         </motion.div>
         <EditPanel/>
+        {getStatus && <AddProdWindow/>}
       </motion.div>
     </motion.div>
   )
