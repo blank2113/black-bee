@@ -1,24 +1,42 @@
-import React, { useState, useRef } from "react";
+import React, { useState} from "react";
 import "./addProdWindow.css";
 import { useDispatch } from "react-redux";
 import { motion } from "framer-motion";
 import { getStatusValue } from "../../store/slices/getStatus";
-// import { useAddNewProductMutation } from "../../store/middlewares/productsApi";
+import axios from "axios";
+import { useAddNewAnimalsMutation} from '../../store/middlewares/animalsApi'
 
 function AddProdWindow() {
-  const [newProductName, setNewProductName] = useState(null)
+  const [data, setData] = useState('')
+  // const [addNewAnimals] = useAddNewAnimalsMutation();
+  
   const dispatch = useDispatch();
-  const form = useRef(null)
 
 
-  const submit = e => {
-    e.preventDefault()
-    const data = new FormData(form.current)
-    fetch('http://164.92.147.133:8000/products', { method: 'POST', body: data })
-      .then(res => res.json())
-      .then(json => setNewProductName(json.newProductName))
+// const handleSubmit = async ()=>{
+//   if(data.name){
+//     await addNewAnimals({name: data}).unwrap();
+//     setData('');
+//   }
+// }
+let formData = new FormData();
+  const getValues = (e) => {
+    if(e.target ){
+      formData.append('name', e.target.value)
+    formData.append('price', e.target.value)
+    }
+    
   }
-console.log(form);
+
+  const  handleSubmit = (event)=> {
+    event.preventDefault();
+
+   
+    
+    axios.post('http://164.92.147.133:8000/products',{formData}).then(res => console.log(res)).catch(e => console.log(e))
+  }
+  
+
   return (
     <motion.div
       //   initial={{ opacity: 0, scale: 0 }}
@@ -30,10 +48,10 @@ console.log(form);
         whileInView={{ opacity: 1, scale: 1 }}
         className="addProdWindow-inner"
       >
-        <form ref={form} onSubmit={submit}>
-          <input type="text"  name={newProductName}/>
-          <input type="number" />
-          <input type="submit" />
+        <form>
+          <input type="text"  name="name" id="name" onChange={getValues}/>
+          <input type="number" name="price"  id="price" onChange={getValues}/>
+          <button onClick={handleSubmit}>send</button>
         </form>
         <button onClick={() => dispatch(getStatusValue(false))}>close</button>
       </motion.div>

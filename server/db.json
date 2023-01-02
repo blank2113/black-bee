@@ -1,11 +1,37 @@
 {
   "animals": [
-    { "id": 1, "name": "Собаки" },
-    { "id": 2, "name": "Кошки" },
-    { "id": 3, "name": "Грызуны" },
-    { "id": 4, "name": "Птицы" },
-    { "id": 5, "name": "Рыбы" },
-    { "id": 6, "name": "Весь товар" }
+    {
+      "id": 1,
+      "name": "Собаки"
+    },
+    {
+      "id": 2,
+      "name": "Кошки"
+    },
+    {
+      "id": 3,
+      "name": "Грызуны"
+    },
+    {
+      "id": 4,
+      "name": "Птицы"
+    },
+    {
+      "id": 5,
+      "name": "Рыбы"
+    },
+    {
+      "id": 6,
+      "name": "Весь товар"
+    },
+    {
+      "data": "ads",
+      "id": 7
+    },
+    {
+      "name": "hahah",
+      "id": 8
+    }
   ],
   "products": [
     {
@@ -576,127 +602,149 @@
       ]
     }
   ],
-  "bestProducts":[{
-    "id": 1,
-    "name": "Pi-Pi Bent 'Корм для кошек'",
-    "price": "50 000",
-    "status": "В наличии",
-    "picture": "./resources/prod.png"
-  },{
-    "id": 2,
-    "name": "Pi-Pi Bent 'Корм для кошек'",
-    "price": "50 000",
-    "status": "В наличии",
-    "picture": "./resources/prod.png"
-  },{
-    "id": 3,
-    "name": "Pi-Pi Bent 'Корм для кошек'",
-    "price": "50 000",
-    "status": "В наличии",
-    "picture": "./resources/prod.png"
-  },{
-    "id": 4,
-    "name": "Pi-Pi Bent 'Корм для кошек'",
-    "price": "50 000",
-    "status": "В наличии",
-    "picture": "./resources/prod.png"
-  },{
-    "id": 5,
-    "name": "Pi-Pi Bent 'Корм для кошек'",
-    "price": "50 000",
-    "status": "В наличии",
-    "picture": "./resources/prod.png"
-  },{
-    "id": 6,
-    "name": "Pi-Pi Bent 'Корм для кошек'",
-    "price": "50 000",
-    "status": "В наличии",
-    "picture": "./resources/prod.png"
-  },{
-    "id": 7,
-    "name": "Pi-Pi Bent 'Корм для кошек'",
-    "price": "50 000",
-    "status": "В наличии",
-    "picture": "./resources/prod.png"
-  },{
-    "id": 8,
-    "name": "Pi-Pi Bent 'Корм для кошек'",
-    "price": "50 000",
-    "status": "В наличии",
-    "picture": "./resources/prod.png"
-  },{
-    "id": 9,
-    "name": "Pi-Pi Bent 'Корм для кошек'",
-    "price": "50 000",
-    "status": "В наличии",
-    "picture": "./resources/prod.png"
-  }],
-  "bestSales":[{
-    "id": 1,
-    "name": "Кузя 'Корм для кошек'",
-    "price": "50 000",
-    "prevPrice":"75 000",
-    "status": "В наличии",
-    "picture": "./resources/kuz.png"
-  },{
-    "id": 2,
-    "name": "Кузя 'Корм для кошек'",
-    "price": "50 000",
-    "prevPrice":"75 000",
-    "status": "В наличии",
-    "picture": "./resources/kuz.png"
-  },{
-    "id": 3,
-    "name": "Кузя 'Корм для кошек'",
-    "price": "50 000",
-    "prevPrice":"75 000",
-    "status": "В наличии",
-    "picture": "./resources/kuz.png"
-  },{
-    "id": 4,
-    "name": "Кузя 'Корм для кошек'",
-    "price": "50 000",
-    "prevPrice":"75 000",
-    "status": "В наличии",
-    "picture": "./resources/kuz.png"
-  },{
-    "id": 5,
-    "name": "Кузя 'Корм для кошек'",
-    "price": "50 000",
-    "prevPrice":"75 000",
-    "status": "В наличии",
-    "picture": "./resources/kuz.png"
-  },{
-    "id": 6,
-    "name": "Кузя 'Корм для кошек'",
-    "price": "50 000",
-    "prevPrice":"75 000",
-    "status": "В наличии",
-    "picture": "./resources/kuz.png"
-  },{
-    "id": 7,
-    "name": "Кузя 'Корм для кошек'",
-    "price": "50 000",
-    "prevPrice":"75 000",
-    "status": "В наличии",
-    "picture": "./resources/kuz.png"
-  },{
-    "id": 8,
-    "name": "Кузя 'Корм для кошек'",
-    "price": "50 000",
-    "prevPrice":"75 000",
-    "status": "В наличии",
-    "picture": "./resources/kuz.png"
-  },{
-    "id": 9,
-    "name": "Кузя 'Корм для кошек'",
-    "price": "50 000",
-    "prevPrice":"75 000",
-    "status": "В наличии",
-    "picture": "./resources/kuz.png"
-  }],
-  "password":[
-    {"id":1,
-    "password":12345}
+  "bestProducts": [
+    {
+      "id": 1,
+      "name": "Pi-Pi Bent 'Корм для кошек'",
+      "price": "50 000",
+      "status": "В наличии",
+      "picture": "./resources/prod.png"
+    },
+    {
+      "id": 2,
+      "name": "Pi-Pi Bent 'Корм для кошек'",
+      "price": "50 000",
+      "status": "В наличии",
+      "picture": "./resources/prod.png"
+    },
+    {
+      "id": 3,
+      "name": "Pi-Pi Bent 'Корм для кошек'",
+      "price": "50 000",
+      "status": "В наличии",
+      "picture": "./resources/prod.png"
+    },
+    {
+      "id": 4,
+      "name": "Pi-Pi Bent 'Корм для кошек'",
+      "price": "50 000",
+      "status": "В наличии",
+      "picture": "./resources/prod.png"
+    },
+    {
+      "id": 5,
+      "name": "Pi-Pi Bent 'Корм для кошек'",
+      "price": "50 000",
+      "status": "В наличии",
+      "picture": "./resources/prod.png"
+    },
+    {
+      "id": 6,
+      "name": "Pi-Pi Bent 'Корм для кошек'",
+      "price": "50 000",
+      "status": "В наличии",
+      "picture": "./resources/prod.png"
+    },
+    {
+      "id": 7,
+      "name": "Pi-Pi Bent 'Корм для кошек'",
+      "price": "50 000",
+      "status": "В наличии",
+      "picture": "./resources/prod.png"
+    },
+    {
+      "id": 8,
+      "name": "Pi-Pi Bent 'Корм для кошек'",
+      "price": "50 000",
+      "status": "В наличии",
+      "picture": "./resources/prod.png"
+    },
+    {
+      "id": 9,
+      "name": "Pi-Pi Bent 'Корм для кошек'",
+      "price": "50 000",
+      "status": "В наличии",
+      "picture": "./resources/prod.png"
+    }
+  ],
+  "bestSales": [
+    {
+      "id": 1,
+      "name": "Кузя 'Корм для кошек'",
+      "price": "50 000",
+      "prevPrice": "75 000",
+      "status": "В наличии",
+      "picture": "./resources/kuz.png"
+    },
+    {
+      "id": 2,
+      "name": "Кузя 'Корм для кошек'",
+      "price": "50 000",
+      "prevPrice": "75 000",
+      "status": "В наличии",
+      "picture": "./resources/kuz.png"
+    },
+    {
+      "id": 3,
+      "name": "Кузя 'Корм для кошек'",
+      "price": "50 000",
+      "prevPrice": "75 000",
+      "status": "В наличии",
+      "picture": "./resources/kuz.png"
+    },
+    {
+      "id": 4,
+      "name": "Кузя 'Корм для кошек'",
+      "price": "50 000",
+      "prevPrice": "75 000",
+      "status": "В наличии",
+      "picture": "./resources/kuz.png"
+    },
+    {
+      "id": 5,
+      "name": "Кузя 'Корм для кошек'",
+      "price": "50 000",
+      "prevPrice": "75 000",
+      "status": "В наличии",
+      "picture": "./resources/kuz.png"
+    },
+    {
+      "id": 6,
+      "name": "Кузя 'Корм для кошек'",
+      "price": "50 000",
+      "prevPrice": "75 000",
+      "status": "В наличии",
+      "picture": "./resources/kuz.png"
+    },
+    {
+      "id": 7,
+      "name": "Кузя 'Корм для кошек'",
+      "price": "50 000",
+      "prevPrice": "75 000",
+      "status": "В наличии",
+      "picture": "./resources/kuz.png"
+    },
+    {
+      "id": 8,
+      "name": "Кузя 'Корм для кошек'",
+      "price": "50 000",
+      "prevPrice": "75 000",
+      "status": "В наличии",
+      "picture": "./resources/kuz.png"
+    },
+    {
+      "id": 9,
+      "name": "Кузя 'Корм для кошек'",
+      "price": "50 000",
+      "prevPrice": "75 000",
+      "status": "В наличии",
+      "picture": "./resources/kuz.png"
+    }
+  ],
+  "password": [
+    {
+      "id": 1,
+      "password": 12345
+    }
   ]
 }
