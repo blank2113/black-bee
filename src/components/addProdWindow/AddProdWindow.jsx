@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { motion } from "framer-motion";
 import { getStatusValue } from "../../store/slices/getStatus";
 import axios from "axios";
+<<<<<<< HEAD
 import { useGetTypeQuery } from "../../store/middlewares/typeApi";
 import { useGetAnimalsQuery } from "../../store/middlewares/animalsApi";
 import { useGetBrandsQuery} from '../../store/middlewares/brandApi'
@@ -38,12 +39,63 @@ function AddProdWindow() {
 
     console.log(formData);
 
+=======
+import { useAddNewProductMutation } from "../../store/middlewares/productsApi";
+
+function AddProdWindow() {
+  // const [addNewProd, response] = useAddNewProductMutation();
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
+  // const [addNewAnimals] = useAddNewAnimalsMutation();
+
+  const dispatch = useDispatch();
+
+  // const onSubmit = async (e) => {
+  //   e.preventDefault()
+  //   const { name, price } = e.target.elements
+  //   let formData = {
+  //     name: name.value,
+  //     price: price.value,
+  //   }
+  //   await addNewProd(formData)
+  //     .unwrap()
+  //     .then(() => {})
+  //     .then((error) => {
+  //       console.log(error)
+  //     })
+  // }
+
+  // const handleSubmit = async ()=>{
+  //   if(data.name){
+  //     await addNewAnimals({name: data}).unwrap();
+  //     setData('');
+  //   }
+  // }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let formData = new FormData();
+    formData.append("name", name);
+    formData.append("price", Number(price));
+    formData.append("status_id", '');
+    formData.append("brand_id", '');
+    formData.append("type_id", '');
+    formData.append("category_id", '');
+    formData.append("image", '');
+
+    console.log(formData);
+    // JSON.stringify(formData)
+>>>>>>> 1d370571158dd39aa74d7c8f6d9ba0194c53ab37
     axios({
       method: "post",
       url: "http://164.92.147.133:8000/product",
       data: formData,
       // headers: { "Content-Type": "multipart/form-data" },
+<<<<<<< HEAD
     }).then(res => dispatch(getStatusValue(false)) && console.log(res)).catch(e => console.log(e))
+=======
+    }).then(res => console.log(res)).catch(e => console.log(e))
+>>>>>>> 1d370571158dd39aa74d7c8f6d9ba0194c53ab37
   };
 
   return (
@@ -55,6 +107,7 @@ function AddProdWindow() {
         whileInView={{ opacity: 1, scale: 1 }}
         className="addProdWindow-inner"
       >
+<<<<<<< HEAD
         
           <p>Создание товара</p>
       
@@ -116,6 +169,21 @@ function AddProdWindow() {
           <button  className="reset-btn" onClick={() => dispatch(getStatusValue(false))}>Отменить</button>
           </div>
           
+=======
+        <form>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            onChange={(e) => setName(e.target.value)}
+          />
+          <input
+            type="number"
+            name="price"
+            onChange={(e) => setPrice(e.target.value)}
+          />
+          <button onClick={handleSubmit}>send</button>
+>>>>>>> 1d370571158dd39aa74d7c8f6d9ba0194c53ab37
         </form>
         <FontAwesomeIcon icon={faXmark} className="close" onClick={() => dispatch(getStatusValue(false))}/>
       </motion.div>
