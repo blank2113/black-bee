@@ -8,10 +8,13 @@ export const productsApi = createApi({
             query: ()=> 'products',
         }),
         addNewProduct: build.mutation({
-            query: (body) => ({
+            query: (payload) => ({
                 url: 'products',
                 method: 'POST',
-                body,
+                body:payload,
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                  }
             })
         })
     })

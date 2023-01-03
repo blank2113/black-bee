@@ -4,14 +4,32 @@ import { useDispatch } from "react-redux";
 import { motion } from "framer-motion";
 import { getStatusValue } from "../../store/slices/getStatus";
 import axios from "axios";
-import { useAddNewAnimalsMutation} from '../../store/middlewares/animalsApi'
+import { useAddNewProductMutation} from '../../store/middlewares/productsApi'
 
 function AddProdWindow() {
-  const [data, setData] = useState('')
+  const [addNewProd, response] = useAddNewProductMutation();
+  const [data, setData] = useState({
+    name:"",
+    price:""
+  })
   // const [addNewAnimals] = useAddNewAnimalsMutation();
   
   const dispatch = useDispatch();
-
+  
+  const onSubmit = async (e) => {
+    e.preventDefault()
+    const { name, price } = e.target.elements
+    let formData = {
+      name: name.value,
+      price: price.value,
+    }
+    await addNewProd(formData)
+      .unwrap()
+      .then(() => {})
+      .then((error) => {
+        console.log(error)
+      })
+  }
 
 // const handleSubmit = async ()=>{
 //   if(data.name){
@@ -19,22 +37,22 @@ function AddProdWindow() {
 //     setData('');
 //   }
 // }
-let formData = new FormData();
-  const getValues = (e) => {
-    if(e.target ){
-      formData.append('name', e.target.value)
-    formData.append('price', e.target.value)
-    }
-    
-  }
-
-  const  handleSubmit = (event)=> {
-    event.preventDefault();
-
+// let formData = new FormData();
+  
+// console.log(formData);
+//   const  handleSubmit = (event)=> {
+//     event.preventDefault();
+//     formData.append('name',data.name)
+//     formData.append("price", Number(data.price))
    
-    
-    axios.post('http://164.92.147.133:8000/products',{formData}).then(res => console.log(res)).catch(e => console.log(e))
-  }
+//     // JSON.stringify(formData)
+//     axios({
+//       method: "post",
+//       url: "http://164.92.147.133:8000/products",
+//       data: formData,
+//       headers: { "Content-Type": "multipart/form-data" },
+//     }).then(res => console.log(res)).catch(e => console.log(e))
+//   }
   
 
   return (
@@ -48,10 +66,10 @@ let formData = new FormData();
         whileInView={{ opacity: 1, scale: 1 }}
         className="addProdWindow-inner"
       >
-        <form>
-          <input type="text"  name="name" id="name" onChange={getValues}/>
-          <input type="number" name="price"  id="price" onChange={getValues}/>
-          <button onClick={handleSubmit}>send</button>
+        <form action="" onSubmit={onSubmit}>
+          <input type="text"  name="name" id="name" />
+          <input type="number" name="price"  />
+          <button type="submit" >send</button>
         </form>
         <button onClick={() => dispatch(getStatusValue(false))}>close</button>
       </motion.div>
