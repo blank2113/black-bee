@@ -5,7 +5,7 @@ export const bestProductsApi = createApi({
     baseQuery: fetchBaseQuery({baseUrl:'http://164.92.147.133:8000/'}),
     endpoints: (build) => ({
         getBestProducts: build.query({
-            query: ()=> 'products?in_sales=false&in_popular=true&in_stock=false',
+            query: ()=> 'product?in_sales=false&in_popular=true&in_stock=false',
         })
     })
 })

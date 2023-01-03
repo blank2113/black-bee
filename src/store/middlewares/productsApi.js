@@ -5,7 +5,7 @@ export const productsApi = createApi({
     baseQuery: fetchBaseQuery({baseUrl:'http://164.92.147.133:8000/'}),
     endpoints: (build) =>({
         getProducts: build.query({
-            query: ()=> 'products',
+            query: ()=> 'product',
         }),
         addNewProduct: build.mutation({
             query: (payload) => ({

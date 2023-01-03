@@ -5,6 +5,7 @@ import { bestProductsApi } from "./middlewares/bestProductApi";
 import { bestSalesApi } from "./middlewares/bestSalesApi";
 import { passwordApi } from "./middlewares/passwordApi";
 import { typeApi } from "./middlewares/typeApi";
+import { brandApi } from "./middlewares/brandApi";
 import getTypeReducer from "./slices/getType";
 import getInputValueReducer from './slices/getInputValue'
 import getAsideItemReducer from './slices/getAsideItem';
@@ -20,6 +21,7 @@ export const store = configureStore({
     [bestSalesApi.reducerPath]: bestSalesApi.reducer,
     [passwordApi.reducerPath]: passwordApi.reducer,
     [typeApi.reducerPath]: typeApi.reducer,
+    [brandApi.reducerPath]: brandApi.reducer,
     getAsideItem: getAsideItemReducer,
     getInputValue: getInputValueReducer,
     getCategories: getCategoriesReducer,
@@ -35,5 +37,6 @@ export const store = configureStore({
       bestSalesApi.middleware,
       passwordApi.middleware,
       typeApi.middleware,
+      brandApi.middleware,
     ]),
 });

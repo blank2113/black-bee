@@ -32,10 +32,10 @@ function TBody({ data }) {
   console.log();
   return (
     <motion.tbody initial="hiden" animate="show" variants={container}>
-      {data === product
+      {data === product && getCategories !== 'Все категории'
         ? data
             .filter((el) => el.type)
-            .filter((e) => e.type.name === getCategories)
+            .filter((e) => e.type.name === getCategories )
             .map((item) => (
               <motion.tr
                 variants={itemA}
@@ -48,15 +48,9 @@ function TBody({ data }) {
                 <td>{item.category? item.category.name : null}</td>
                 <td>{item.name}</td>
                 <td>
-                  {item.price}
+                {item.price} сум
                 </td>
-                <td>
-                  {/* {item.items.map((el) => (
-                    <td className="status" key={el.id}>
-                      {el.status}
-                    </td>
-                  ))} */}
-                </td>
+                <td>{item.stats? item.status.in_stock : '---'}</td>
               </motion.tr>
             ))
         : data.map((item) => (
