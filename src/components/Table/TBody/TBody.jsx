@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "./tBody.css";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useGetProductsQuery } from "../../../store/middlewares/productsApi";
+import AdditionalEditPanel from "../../additonalEditPanel/AdditionalEditPanel";
+import { getIdValue } from "../../../store/slices/getId";
 
 const container = {
   hiden: {
@@ -27,39 +29,59 @@ const itemA = {
 };
 
 function TBody({ data }) {
-  const { data: product = [] } = useGetProductsQuery();
+  const { data: product = [] } = useGetProductsQuery(
+    {},
+    { pollingInterval: 3000, refetchOnMountOrArgChange: true, skip: false }
+  );
+
   const getCategories = useSelector((state) => state.getCategories.value);
-  console.log();
+  const getId = useSelector((state) => state.getId.value);
+  const dispatch = useDispatch();
+
   return (
     <motion.tbody initial="hiden" animate="show" variants={container}>
-      {data === product && getCategories !== 'Все категории'
+      {data === product && getCategories !== "Все категории"
         ? data
             .filter((el) => el.type)
-            .filter((e) => e.type.name === getCategories )
+            .filter((e) => e.type.name === getCategories)
             .map((item) => (
               <motion.tr
                 variants={itemA}
                 initial="hidden"
                 animate="show"
-                className="listed"
+                className={getId === item.id ? "listed active" : "listed"}
                 key={item.id}
+                onClick={() => dispatch(getIdValue(item.id))}
               >
                 <td>{item.id}</td>
-                <td>{item.category? item.category.name : null}</td>
+                <td>{item.type ? item.type.name : null}</td>
+                <td>{item.brand ? item.brand.name : null}</td>
                 <td>{item.name}</td>
+                <td>{item.price} сум</td>
+                <td>{item.stats ? item.status.in_stock : "---"}</td>
                 <td>
-                {item.price} сум
+                  <AdditionalEditPanel />
                 </td>
-                <td>{item.stats? item.status.in_stock : '---'}</td>
               </motion.tr>
             ))
         : data.map((item) => (
-            <tr key={item.id}>
+            <tr
+              className={getId === item.id ? "listed active" : "listed"}
+              key={item.id}
+              onClick={() => dispatch(getIdValue(item.id))}
+            >
               <td>{item.id}</td>
+              <td>{item.type ? item.type.name : null}</td>
+              <td>{item.brand ? item.brand.name : null}</td>
               <td>{item.name}</td>
-              {/* <td>{item.prevPrice ? item.prevPrice : "---"}</td> */}
+              
               <td>{item.price}</td>
+              <td>{item.status ? item.status.in_stock : "---"}</td>
+              <td></td>
               {/* <td>{item.status}</td> */}
+              <td>
+                <AdditionalEditPanel />
+              </td>
             </tr>
           ))}
     </motion.tbody>

@@ -11,10 +11,16 @@ import {motion} from 'framer-motion'
 
 function Table() {
   
-  const {data:products=[]} = useGetProductsQuery();
+  const {data:products=[]} = useGetProductsQuery(
+    {},
+    { pollingInterval: 1000, refetchOnMountOrArgChange: true, skip: false });
 
-  const {data:bestProducts=[]} = useGetBestProductsQuery();
-  const {data: bestSales=[]} = useGetBestSalesQuery();
+  const {data:bestProducts=[]} = useGetBestProductsQuery(
+    {},
+    { pollingInterval: 1000, refetchOnMountOrArgChange: true, skip: false });
+  const {data: bestSales=[]} = useGetBestSalesQuery(
+    {},
+    { pollingInterval: 1000, refetchOnMountOrArgChange: true, skip: false });
   const getAsideItemName = useSelector(state => state.getAsideItem.value)
 
 

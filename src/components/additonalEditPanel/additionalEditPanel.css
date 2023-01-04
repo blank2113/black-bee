@@ -1,0 +1,15 @@
+.additional-edit-panel__inner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+.adde-btn{
+    color: rgb(0, 13, 255);
+    cursor: pointer;
+}
+.del-btn{
+    /* margin-left: 20px; */
+    color: rgb(230, 11, 11);
+    cursor: pointer;
+}

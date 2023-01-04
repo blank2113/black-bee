@@ -11,6 +11,9 @@ import getInputValueReducer from './slices/getInputValue'
 import getAsideItemReducer from './slices/getAsideItem';
 import getCategoriesReducer from "./slices/getCategories";
 import getStatusReducer from "./slices/getStatus";
+import getIdReducer from "./slices/getId";
+import getActivePanelReducer from "./slices/getActivePanel";
+import getActiveBtnReducer from "./slices/getActiveBtn";
 
 
 export const store = configureStore({
@@ -27,6 +30,9 @@ export const store = configureStore({
     getCategories: getCategoriesReducer,
     getType: getTypeReducer,
     getStatus: getStatusReducer,
+    getId: getIdReducer,
+    getActivePanel: getActivePanelReducer,
+    getActiveBtn: getActiveBtnReducer,
 
   },
   middleware: (getDefaultMiddleWare) =>

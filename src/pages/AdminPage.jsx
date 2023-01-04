@@ -8,6 +8,8 @@ import EditPanel from '../components/editPanel/EditPanel';
 import Table from '../components/Table/Table';
 import Categories from '../components/categories/Categories';
 import AddProdWindow from '../components/addProdWindow/AddProdWindow';
+import ConfirmPanel from '../components/confirmPanel/ConfirmPanel';
+import ChangeStatus from '../components/changeStatus/ChangeStatus';
 
 
 
@@ -42,8 +44,9 @@ export const variants = {
 };
 function AdminPage() {
   const getStatus = useSelector(state => state.getStatus.value)
-  console.log(getStatus);
   const getAsideItem = useSelector(state => state.getAsideItem.value)
+  const getActivePanel = useSelector(state => state.getActivePanel.value)
+  const getActiveBtn = useSelector(state => state.getActiveBtn.value)
   return (
     <motion.div initial={{opacity:0}} whileInView={{opacity:1}} className="admin-page">
       <motion.div initial="hidden" whileInView="visible" variants={blockAnimation} className='admin-page-inner'>
@@ -60,7 +63,9 @@ function AdminPage() {
           <Table/>
         </motion.div>
         <EditPanel/>
+        {getActivePanel && <ConfirmPanel/>}
         {getStatus && <AddProdWindow/>}
+        {getActiveBtn && <ChangeStatus/>}
       </motion.div>
     </motion.div>
   )
