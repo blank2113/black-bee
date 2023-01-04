@@ -1,15 +1,14 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrashCan, faEllipsis } from "@fortawesome/free-solid-svg-icons";
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import "./additionalEditPanel.css";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getActivePanelValue } from "../../store/slices/getActivePanel";
-import { getActiveBtnValue} from '../../store/slices/getActiveBtn';
 
 
 function AdditionalEditPanel() {
   const dispatch = useDispatch();
-  const getActiveBtn = useSelector(state => state.getActiveBtn.value)
+
 
 
   return (

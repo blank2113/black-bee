@@ -4,6 +4,7 @@
     background-position: left;
     background-size: contain;
     padding: 0px 0;
+    position: relative;
   }
   .top-content-inner {
     display: flex;
@@ -34,7 +35,7 @@
     bottom: 0;
     right: 0;
     width: 60%;
-    z-index: -100;
+    z-index: 10;
   }
   .button-see {
     font-weight: 700;

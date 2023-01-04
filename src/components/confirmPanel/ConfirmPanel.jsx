@@ -12,13 +12,9 @@ function ConfirmPanel({asd}) {
   const handleDelete = (e) => {
     e.preventDefault();
     dispatch(getActivePanelValue(false))
-    axios({
-      method: "delete",
-      url: `http://164.92.147.133:8000/product?id=${Number(getId)}`,
-    //   data: ,
-      // headers: { "Content-Type": "multipart/form-data" },
-      
-    }) .then((res) =>  console.log(res))
+
+    axios({method:"delete",
+    url:`http://164.92.147.133:8000/product?id=${Number(getId)}`}).then((res) =>  console.log(res))
     .catch((e) => console.log(e));
   };
   return (

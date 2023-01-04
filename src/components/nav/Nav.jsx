@@ -6,7 +6,6 @@ import NavItem from "./navItem/NavItem";
 const menuData = [{"id":1,
 "name": "Главня","href":"main"}, {"id":2,
 "name": "Товары","href":"goods"}, {"id":3,
-"name": "О нас","href":"about"}, {"id":4,
 "name": "Контакты","href":"contact"}];
 
 function Nav({ active, setActive }) {
@@ -20,7 +19,7 @@ function Nav({ active, setActive }) {
       <div className="blur" />
       <div className="nav-content" onClick={(e) => e.stopPropagation()}>
         {menuData.map((item) => (
-          <NavItem key={item.index}
+          <NavItem key={item.id}
           item={item}
           isSelected={activeIndex === item.id}
           handleClick={()=> setActiveIndex(item.id)}

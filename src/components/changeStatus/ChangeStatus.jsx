@@ -2,12 +2,12 @@ import React from "react";
 import "./changeStatus.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import { useSelector, useDispatch } from "react-redux";
+import {  useDispatch } from "react-redux";
 import { getActiveBtnValue } from "../../store/slices/getActiveBtn";
 
 function ChangeStatus() {
-  const getActiveBtn = useSelector((state) => state.getActiveBtn.value);
   const dispatch = useDispatch();
+
   return (
     <div className="chnage-status">
       <div className="selection">

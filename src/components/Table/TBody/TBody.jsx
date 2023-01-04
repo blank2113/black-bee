@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import "./tBody.css";
 import { useSelector, useDispatch } from "react-redux";
@@ -55,6 +55,7 @@ function TBody({ data }) {
               >
                 <td>{item.id}</td>
                 <td>{item.type ? item.type.name : null}</td>
+                <td>{item.category ? item.category.name : null}</td>
                 <td>{item.brand ? item.brand.name : null}</td>
                 <td>{item.name}</td>
                 <td>{item.price} сум</td>
@@ -71,14 +72,12 @@ function TBody({ data }) {
               onClick={() => dispatch(getIdValue(item.id))}
             >
               <td>{item.id}</td>
+              <td>{item.category ? item.category.name : null}</td>
               <td>{item.type ? item.type.name : null}</td>
               <td>{item.brand ? item.brand.name : null}</td>
               <td>{item.name}</td>
-              
               <td>{item.price}</td>
               <td>{item.status ? item.status.in_stock : "---"}</td>
-              <td></td>
-              {/* <td>{item.status}</td> */}
               <td>
                 <AdditionalEditPanel />
               </td>

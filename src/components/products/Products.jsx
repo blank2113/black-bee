@@ -20,7 +20,7 @@ function Products() {
         {getType === 10
           ? data.map((item) => (
               <div key={item.id} className="products-inner container">
-                <h3>asd</h3>
+                <h3>{item.type ? item.type.name : null}</h3>
                 <div className="products-inner__card-wrapper">
                   <li key={item.key}>
                     <img src={item.image} alt="product-img" />

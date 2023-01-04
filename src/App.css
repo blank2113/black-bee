@@ -4,3 +4,13 @@
   color: #000;
   font-size: 20px;
 }
+.preloader{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

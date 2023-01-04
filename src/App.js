@@ -6,6 +6,11 @@ import {
 import MainPage from "./pages/MainPage";
 import LoginPage from "./pages/LoginPage";
 import AdminPage from "./pages/AdminPage";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { DotLoader} from "react-spinners";
+
+
 
 const router = createBrowserRouter([
   { path: "/", element: <MainPage /> },
@@ -14,9 +19,38 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+  const [loading,setLoading] = useState(false);
+ const isLoaded= ()=>{
+   axios({
+    method: "get",
+    url: "http://164.92.147.133:8000/product",
+    // headers: { "Content-Type": "multipart/form-data" },
+  })
+    .then((res) =>  setLoading(false)&& console.log(res))
+    .catch((e) => console.log(e));
+};
+  
+
+  useEffect( ()=>{
+    setLoading(true)
+    isLoaded()
+  },[])
   return (
     <div className="App">
-        <RouterProvider router={router} />
+      { loading ? 
+      <div className="preloader">
+         <DotLoader
+        color='#000'
+        loading={loading}
+        // cssOverride={override}
+        size={150}
+        aria-label="Loading Spinner"
+        data-testid="loader"
+      />
+      </div>
+       
+      : <RouterProvider router={router} />}
+        
     </div>
   );
 }
