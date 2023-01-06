@@ -1,54 +1,133 @@
-import React  from 'react'
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import logo2 from '../assets/logo2.svg';
+import logo2 from "../assets/logo2.svg";
 import "./LoginPage.css";
-import {useSelector, useDispatch} from 'react-redux';
-import { useGetPasswordQuery } from '../store/middlewares/passwordApi';
-import {getInput} from '../store/slices/getInputValue'
-import {motion} from 'framer-motion'
+import { useSelector, useDispatch } from "react-redux";
+import { getInput } from "../store/slices/getInputValue";
+import { getTokenData, saveTokenData } from "../store/slices/getToken";
+import { useGetTokenAccessMutation } from "../store/middlewares/passwordApi";
+import { motion } from "framer-motion";
 
-const logoAnimated ={hidden:{
-  x:-200,
-  opacity:0,
-},visible: (custom) =>({x:0,opacity:1,transition: {delay: custom * 0.2}})}
 
-const textAnimated ={hidden:{
-  x:300,opacity:0,
-},visible: (custom) =>({x:0,opacity:1,transition: {delay: custom * 0.2}})}
+const logoAnimated = {
+  hidden: {
+    x: -200,
+    opacity: 0,
+  },
+  visible: (custom) => ({
+    x: 0,
+    opacity: 1,
+    transition: { delay: custom * 0.2 },
+  }),
+};
+
+const textAnimated = {
+  hidden: {
+    x: 300,
+    opacity: 0,
+  },
+  visible: (custom) => ({
+    x: 0,
+    opacity: 1,
+    transition: { delay: custom * 0.2 },
+  }),
+};
 
 function LoginPage() {
-  const {data =[]} = useGetPasswordQuery();
-  const getInputValue = useSelector(state => state.getInputValue.value)
+  const getInputValue = useSelector((state) => state.getInputValue.password);
+  const getInputUserName = useSelector((state) => state.getInputValue.username);
+  const getTokenValue = useSelector((state) => state.getToken.value);
+  const [addNewToken, { isSuccess }] = useGetTokenAccessMutation();
   const dispatch = useDispatch();
   let navigate = useNavigate();
+  const formData = new FormData();
+  formData.append("username", getInputUserName);
+  formData.append("password", getInputValue);
+
+  const clockable = async () => {
+    if (formData) {
+      await addNewToken(formData)
+        .then((res) => sessionStorage.setItem('token', res.data.access_token))
+        .catch((err) => console.log(err));
+    }
+  };
+
+  // const getToken = () => {
+  //   const formData2 = new FormData();
+  //   formData2.append('username', getInputUserName);
+  //   formData2.append('password',getInputValue)
+
+  //   axios({
+  //     method: 'POST',
+  //     url: 'http://164.92.147.133:8000/token',
+  //     data: formData2,
+  //   }).then((res) =>  dispatch(getTokenData(sessionStorage.setItem('token', res.data.access_token))))
+  //   .catch((e) => console.log(e));
+  // };
+
   const goAdmin = () => {
     navigate("/admin");
   };
   return (
-    <motion.div initial={{opacity:0}} whileInView={{opacity:1}} className="login-page">
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      className="login-page"
+    >
       <div className="login-page__inner container">
         <div className="login-inner__logo">
-          <motion.img custom={1.5} initial="hidden" whileInView="visible" variants={logoAnimated} src={logo2} alt="logo2"/>
-          <motion.p custom={1} initial="hidden" whileInView="visible" variants={textAnimated} className="login-inner__logo-title">black bee|zoomarket</motion.p>
+          <motion.img
+            custom={1.5}
+            initial="hidden"
+            whileInView="visible"
+            variants={logoAnimated}
+            src={logo2}
+            alt="logo2"
+          />
+          <motion.p
+            custom={1}
+            initial="hidden"
+            whileInView="visible"
+            variants={textAnimated}
+            className="login-inner__logo-title"
+          >
+            black bee|zoomarket
+          </motion.p>
         </div>
-        <motion.div custom={1.7} initial="hidden" whileInView="visible" variants={logoAnimated} className="login-page__inner-wrapper">
+        <motion.div
+          custom={1.7}
+          initial="hidden"
+          whileInView="visible"
+          variants={logoAnimated}
+          className="login-page__inner-wrapper"
+        >
           <h3>Авторизация</h3>
 
           <motion.input
-          initial={{opacity:0.5}}
-          whileFocus={{opacity:1}}
+            initial={{ opacity: 0.5 }}
+            whileFocus={{ opacity: 1 }}
             type="password"
             name="password"
             placeholder="Введите пароль"
             onChange={(e) => dispatch(getInput(e.target.value))}
           />
-          <motion.button  initial={{scale:1, opacity:0.5}} whileTap={{scale:1.5, opacity:1}} whileHover={{opacity:1}} onClick={() => (Number(getInputValue)  === Number(data[0].password)  ? goAdmin() : null)}>
+          <motion.button
+            initial={{ scale: 1, opacity: 0.5 }}
+            whileTap={{ scale: 1.5, opacity: 1 }}
+            whileHover={{ opacity: 1 }}
+            onClick={clockable}
+          >
             Войти
           </motion.button>
+          {/* <button onClick={()=> dispatch(saveTokenData())}></button> */}
+          {isSuccess ? goAdmin() : console.log(isSuccess)}
         </motion.div>
+        <button onClick={() => console.log(sessionStorage.getItem("token"))}>
+          aaa
+        </button>
       </div>
     </motion.div>
-  )
+  );
 }
 
-export default LoginPage
+export default LoginPage;

@@ -14,6 +14,8 @@ import getStatusReducer from "./slices/getStatus";
 import getIdReducer from "./slices/getId";
 import getActivePanelReducer from "./slices/getActivePanel";
 import getActiveBtnReducer from "./slices/getActiveBtn";
+import getTokenReducer from "./slices/getToken";
+
 
 
 export const store = configureStore({
@@ -33,6 +35,7 @@ export const store = configureStore({
     getId: getIdReducer,
     getActivePanel: getActivePanelReducer,
     getActiveBtn: getActiveBtnReducer,
+    getToken: getTokenReducer,
 
   },
   middleware: (getDefaultMiddleWare) =>

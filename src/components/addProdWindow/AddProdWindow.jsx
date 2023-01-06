@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./addProdWindow.css";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { motion } from "framer-motion";
 import { getStatusValue } from "../../store/slices/getStatus";
 import axios from "axios";
@@ -9,14 +9,22 @@ import { useGetAnimalsQuery } from "../../store/middlewares/animalsApi";
 import { useGetBrandsQuery } from "../../store/middlewares/brandApi";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { useAddNewProductMutation } from "../../store/middlewares/productsApi";
 
 function AddProdWindow() {
-  const { data: brand = [] } = useGetBrandsQuery(    {},
-    { pollingInterval: 1000, refetchOnMountOrArgChange: true, skip: false });
-  const { data: category = [] } = useGetAnimalsQuery(    {},
-    { pollingInterval: 1000, refetchOnMountOrArgChange: true, skip: false });
-  const { data: types = [] } = useGetTypeQuery(    {},
-    { pollingInterval: 1000, refetchOnMountOrArgChange: true, skip: false });
+  const { data: brand = [] } = useGetBrandsQuery(
+    {},
+    { pollingInterval: 1000, refetchOnMountOrArgChange: true, skip: false }
+  );
+  const { data: category = [] } = useGetAnimalsQuery(
+    {},
+    { pollingInterval: 1000, refetchOnMountOrArgChange: true, skip: false }
+  );
+  const { data: types = [] } = useGetTypeQuery(
+    {},
+    { pollingInterval: 1000, refetchOnMountOrArgChange: true, skip: false }
+  );
+  const getTokenValue = useSelector((state) => state.getToken.value);
   const [categoryType, setCategoryType] = useState(4);
   const [type, setType] = useState(1);
   const [option, setOption] = useState(1);
@@ -24,10 +32,10 @@ function AddProdWindow() {
   const [price, setPrice] = useState("");
   const [image, setImage] = useState(null);
   // const [addNewAnimals] = useAddNewAnimalsMutation();
-
   const dispatch = useDispatch();
-  console.log(categoryType);
-  const handleSubmit = (e) => {
+  const [addNewProd, { isError }] = useAddNewProductMutation();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     let formData = new FormData();
     formData.append("name", name);
@@ -37,16 +45,20 @@ function AddProdWindow() {
     formData.append("type_id", Number(type));
     formData.append("category_id", Number(categoryType));
     formData.append("image", image);
-    
-    dispatch(getStatusValue(false))
-    axios({
-      method: "post",
-      url: "http://164.92.147.133:8000/product",
-      data: formData,
-      // headers: { "Content-Type": "multipart/form-data" },
-    })
-      .then((res) =>  console.log(res))
-      .catch((e) => console.log(e));
+
+    if (formData) {
+      await addNewProd(formData);
+      dispatch(getStatusValue(false));
+    }
+
+    // axios({
+    //   method: "post",
+    //   url: "http://164.92.147.133:8000/product",
+    //   data: formData,
+    //   headers: {"Authorization" : `bearer ${sessionStorage.getItem('token')}`},
+    // })
+    //   .then((res) =>  console.log(res))
+    //   .catch((e) => console.log(e));
   };
 
   return (

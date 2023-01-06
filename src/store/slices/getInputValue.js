@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    value: "",
+    password: "",
+    username: 'admin',
 }
 
 export const getInputValueSlice = createSlice({
@@ -9,8 +10,8 @@ export const getInputValueSlice = createSlice({
     initialState,
     reducers:{
         getInput: (state,action) =>{
-            state.value = action.payload
-        }
+            state.password = action.payload
+        },
     }
 })
 
