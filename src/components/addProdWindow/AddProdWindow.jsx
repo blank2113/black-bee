@@ -1,37 +1,28 @@
 import React, { useEffect, useState } from "react";
 import "./addProdWindow.css";
+import {
+  getFormDataName,
+  getFormDataPrice,
+  getFormDataBrandId,
+  getFormDataTypeId,
+  getFormDataCategoryId
+} from "../../store/slices/getFormData";
 import { useSelector, useDispatch } from "react-redux";
 import { motion } from "framer-motion";
 import { getStatusValue } from "../../store/slices/getStatus";
-import axios from "axios";
-import { useGetTypeQuery } from "../../store/middlewares/typeApi";
-import { useGetAnimalsQuery } from "../../store/middlewares/animalsApi";
-import { useGetBrandsQuery } from "../../store/middlewares/brandApi";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useAddNewProductMutation } from "../../store/middlewares/productsApi";
 
-function AddProdWindow() {
-  const { data: brand = [] } = useGetBrandsQuery(
-    {},
-    { pollingInterval: 1000, refetchOnMountOrArgChange: true, skip: false }
-  );
-  const { data: category = [] } = useGetAnimalsQuery(
-    {},
-    { pollingInterval: 1000, refetchOnMountOrArgChange: true, skip: false }
-  );
-  const { data: types = [] } = useGetTypeQuery(
-    {},
-    { pollingInterval: 1000, refetchOnMountOrArgChange: true, skip: false }
-  );
-  const getTokenValue = useSelector((state) => state.getToken.value);
-  const [categoryType, setCategoryType] = useState(4);
-  const [type, setType] = useState(1);
-  const [option, setOption] = useState(1);
-  const [name, setName] = useState("");
-  const [price, setPrice] = useState("");
-  const [image, setImage] = useState(null);
-  // const [addNewAnimals] = useAddNewAnimalsMutation();
+function AddProdWindow({brand,category,types}) {
+ 
+  const name = useSelector(state => state.getFormData.name)
+  const price = useSelector(state => state.getFormData.price)
+  const status_id = useSelector(state => state.getFormData.status_id)
+  const brand_id = useSelector(state => state.getFormData.brand_id)
+  const type_id = useSelector(state => state.getFormData.type_id)
+  const category_id = useSelector(state => state.getFormData.category_id)
+  const [image, setImage] = useState(null)
   const dispatch = useDispatch();
   const [addNewProd, { isError }] = useAddNewProductMutation();
 
@@ -39,26 +30,18 @@ function AddProdWindow() {
     e.preventDefault();
     let formData = new FormData();
     formData.append("name", name);
-    formData.append("price", Number(price));
-    formData.append("status_id", "");
-    formData.append("brand_id", Number(option));
-    formData.append("type_id", Number(type));
-    formData.append("category_id", Number(categoryType));
+    formData.append("price", price);
+    formData.append("status_id", status_id);
+    formData.append("brand_id", brand_id);
+    formData.append("type_id", type_id);
+    formData.append("category_id", category_id);
     formData.append("image", image);
 
     if (formData) {
       await addNewProd(formData);
-      dispatch(getStatusValue(false));
+    
     }
-
-    // axios({
-    //   method: "post",
-    //   url: "http://164.92.147.133:8000/product",
-    //   data: formData,
-    //   headers: {"Authorization" : `bearer ${sessionStorage.getItem('token')}`},
-    // })
-    //   .then((res) =>  console.log(res))
-    //   .catch((e) => console.log(e));
+    dispatch(getStatusValue(false));
   };
 
   return (
@@ -77,7 +60,7 @@ function AddProdWindow() {
             <input
               type="text"
               name="name"
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => dispatch(getFormDataName(e.target.value))}
               className="input-name"
             />
           </div>
@@ -86,7 +69,7 @@ function AddProdWindow() {
             <input
               type="number"
               name="price"
-              onChange={(e) => setPrice(e.target.value)}
+              onChange={(e) => dispatch(getFormDataPrice(e.target.value))}
               className="input-price"
             />
           </div>
@@ -96,7 +79,7 @@ function AddProdWindow() {
               className="sform-control active"
               name="brand"
               id="brand"
-              onChange={(e) => setOption(e.target.value)}
+              onChange={(e) => dispatch(getFormDataBrandId(e.target.value))}
             >
               {brand.map((item) => (
                 <option value={item.id} key={item.id}>
@@ -114,7 +97,7 @@ function AddProdWindow() {
             <select
               name="category"
               id="category"
-              onChange={(e) => setCategoryType(e.target.value)}
+              onChange={(e) => dispatch(getFormDataCategoryId(e.target.value))}
             >
               {category.map((item) => (
                 <option value={item.id} key={item.id}>
@@ -132,7 +115,7 @@ function AddProdWindow() {
             <select
               name="types"
               id="types"
-              onChange={(e) => setType(e.target.value)}
+              onChange={(e) => dispatch(getFormDataTypeId(e.target.value))}
             >
               {types.map((item) => (
                 <option value={item.id} key={item.id}>

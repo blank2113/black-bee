@@ -14,8 +14,15 @@ export const productsApi = createApi({
                 body:payload,
                 headers: {"Authorization" : `bearer ${sessionStorage.getItem('token')}`}
             })
+        }),
+        deleteProduct: build.mutation({
+            query: (payload) =>({
+                url: `product?id=${Number(payload)}`,
+                method: 'DELETE',
+                headers: {"Authorization" : `bearer ${sessionStorage.getItem('token')}`}
+            })
         })
     })
 })
 
-export const { useGetProductsQuery, useAddNewProductMutation} = productsApi;
+export const { useGetProductsQuery, useAddNewProductMutation, useDeleteProductMutation} = productsApi;

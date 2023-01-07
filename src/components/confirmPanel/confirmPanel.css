@@ -1,5 +1,4 @@
-
-.confirm-panel-wrapper{
+.confirm-panel{
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.589);
@@ -10,8 +9,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-   
 }
+
 .confirm-panel-window{
     display: flex;
     align-items: center;

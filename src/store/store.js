@@ -15,6 +15,8 @@ import getIdReducer from "./slices/getId";
 import getActivePanelReducer from "./slices/getActivePanel";
 import getActiveBtnReducer from "./slices/getActiveBtn";
 import getTokenReducer from "./slices/getToken";
+import getFormDataReducer from "./slices/getFormData";
+
 
 
 
@@ -36,7 +38,7 @@ export const store = configureStore({
     getActivePanel: getActivePanelReducer,
     getActiveBtn: getActiveBtnReducer,
     getToken: getTokenReducer,
-
+    getFormData: getFormDataReducer,
   },
   middleware: (getDefaultMiddleWare) =>
     getDefaultMiddleWare().concat([

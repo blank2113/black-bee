@@ -1,4 +1,3 @@
-import React from "react";
 import "./AdminPage.css";
 import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
@@ -10,6 +9,9 @@ import Categories from "../components/categories/Categories";
 import AddProdWindow from "../components/addProdWindow/AddProdWindow";
 import ConfirmPanel from "../components/confirmPanel/ConfirmPanel";
 import ChangeStatus from "../components/changeStatus/ChangeStatus";
+import { useGetBrandsQuery } from "../store/middlewares/brandApi";
+import { useGetAnimalsQuery } from "../store/middlewares/animalsApi";
+import { useGetTypeQuery } from "../store/middlewares/typeApi";
 
 const blockAnimation = {
   hidden: {
@@ -45,16 +47,30 @@ function AdminPage() {
   const getAsideItem = useSelector((state) => state.getAsideItem.value);
   const getActivePanel = useSelector((state) => state.getActivePanel.value);
   const getActiveBtn = useSelector((state) => state.getActiveBtn.value);
+  const { data: brand = [] } = useGetBrandsQuery(
+    {},
+    { pollingInterval: 1000, refetchOnMountOrArgChange: true, skip: false }
+  );
+  const { data: category = [] } = useGetAnimalsQuery(
+    {},
+    { pollingInterval: 1000, refetchOnMountOrArgChange: true, skip: false }
+  );
+  const { data: types = [] } = useGetTypeQuery(
+    {},
+    { pollingInterval: 1000, refetchOnMountOrArgChange: true, skip: false }
+  );
   return (
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      className="admin-page">
+      className="admin-page"
+    >
       <motion.div
         initial="hidden"
         whileInView="visible"
         variants={blockAnimation}
-        className="admin-page-inner">
+        className="admin-page-inner"
+      >
         <AdminHeader />
         <motion.div className="admin-page-inner__wrapper">
           <div className="right">
@@ -62,15 +78,18 @@ function AdminPage() {
             <motion.div
               initial="hide"
               animate={getAsideItem === "Список товаров" ? "show" : "hide"}
-              variants={variants}>
+              variants={variants}
+            >
               <Categories />
             </motion.div>
           </div>
           <Table />
         </motion.div>
         <EditPanel />
-        {getActivePanel && <ConfirmPanel />}
-        {getStatus && <AddProdWindow />}
+        <ConfirmPanel active={getActivePanel} />
+        {getStatus && (
+          <AddProdWindow brand={brand} category={category} types={types} />
+        )}
         {getActiveBtn && <ChangeStatus />}
       </motion.div>
     </motion.div>

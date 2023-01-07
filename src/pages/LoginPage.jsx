@@ -4,7 +4,6 @@ import logo2 from "../assets/logo2.svg";
 import "./LoginPage.css";
 import { useSelector, useDispatch } from "react-redux";
 import { getInput } from "../store/slices/getInputValue";
-import { getTokenData, saveTokenData } from "../store/slices/getToken";
 import { useGetTokenAccessMutation } from "../store/middlewares/passwordApi";
 import { motion } from "framer-motion";
 
@@ -36,7 +35,6 @@ const textAnimated = {
 function LoginPage() {
   const getInputValue = useSelector((state) => state.getInputValue.password);
   const getInputUserName = useSelector((state) => state.getInputValue.username);
-  const getTokenValue = useSelector((state) => state.getToken.value);
   const [addNewToken, { isSuccess }] = useGetTokenAccessMutation();
   const dispatch = useDispatch();
   let navigate = useNavigate();

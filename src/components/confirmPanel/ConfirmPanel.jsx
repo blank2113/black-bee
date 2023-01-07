@@ -1,25 +1,36 @@
-import React from "react";
 import "./confirmPanel.css";
-import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { getActivePanelValue } from "../../store/slices/getActivePanel";
+import { useDeleteProductMutation} from '../../store/middlewares/productsApi'
+import {motion} from 'framer-motion'
 
-function ConfirmPanel({asd}) {
+function ConfirmPanel({active}) {
   const getId = useSelector((state) => state.getId.value);
+  const getStatus = useSelector((state) => state.getStatus.value)
   const dispatch = useDispatch();
+  const [delProd,{}] = useDeleteProductMutation()
 
-
-  const handleDelete = (e) => {
-    e.preventDefault();
-    dispatch(getActivePanelValue(false))
-
-    axios({method:"delete",
-    url:`http://164.92.147.133:8000/product?id=${Number(getId)}`}).then((res) =>  console.log(res))
-    .catch((e) => console.log(e));
+  const handleDelete = async(e) => {
+    e.preventDefault(); 
+    if(getId){
+      await delProd(getId)
+      .then((res) => console.log(res))
+      .catch((e) => console.log(e));
+    }
+    dispatch(getActivePanelValue(false));
   };
+
   return (
-    <div className="confirm-panel">
-      <div className="confirm-panel-wrapper">
+    <motion.div className="confirm-panel"
+    initial={{scale:0,opacity:0}}
+    animate={ active ? {scale:1,opacity:1} : {scale:0,opacity:0}}
+    exit={{opacity:0,scale:0}}
+    >
+      <motion.div className="confirm-panel-wrapper"
+      initial={{opacity:0,scale:0}}
+      animate={active? {opacity:1,scale:1} : {opacity:0,scale:0}}
+      exit={{opacity:0,scale:0}}
+      >
         <div className="confirm-panel-window">
           <button className="confirm-btn" onClick={handleDelete}>
             Удалить
@@ -31,8 +42,8 @@ function ConfirmPanel({asd}) {
             Оменить
           </button>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 }
 
