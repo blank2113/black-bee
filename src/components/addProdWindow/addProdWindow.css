@@ -21,6 +21,9 @@
     text-align: center;
     border-radius: 20px;
     position: relative;
+    -webkit-box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.35); 
+-moz-box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.35); 
+box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.35);
 }
 .addProdWindow-inner p{
     font-size: 25px;
@@ -74,7 +77,22 @@
 }
 input{
     width: 300px;
+    background: linear-gradient(113.43deg, #FFC700 21.57%, #FF9900 100%);
+    cursor: pointer;
+    color: #000;
+    -webkit-appearance: none;
 }
+input[type=file]{
+    background: transparent;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+    -moz-appearance:textfield;
+  }
 .input-file {
    margin-top: 5px;
 }
@@ -88,14 +106,6 @@ input{
     margin-left: 10px;
     background-color: #d69292;
 }
-/* select{
-    width: 300px;
-    font-weight: 500;
-    font-size: 20px;
-    margin-bottom: 20px;
-} */
-/* Arrow down */
-/* Style for select */
 .wrap-select-arrow{
     display: grid;
     grid-template-columns:1fr 1fr;
@@ -108,12 +118,14 @@ select {
     appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
-    color: #fff;
-    background: #d69292;
-    /* background: url("../images/select-bg.jpg") no-repeat scroll 0 0 transparent; */
+    border: none;
+    color: #000;
+    font-weight: 500;
+    background: linear-gradient(113.43deg, #FFC700 21.57%, #FF9900 100%);
     text-indent: 0.01px;
     text-overflow: "";
     margin-bottom: 10px;
+    cursor: pointer;
   }
   
   /* Hidden select default on ie */
@@ -162,6 +174,9 @@ input[type=file]{
   width: 150px;
   color: #fff;
   border-radius: 5px;
+  -webkit-box-shadow: 2px 0px 10px 3px rgba(0, 0, 0, 0.27); 
+-moz-box-shadow: 2px 0px 10px 3px rgba(0, 0, 0, 0.27); 
+box-shadow: 2px 0px 10px 3px rgba(0, 0, 0, 0.27);
 }
 .reset-btn {
     margin-left: 10px;
@@ -170,4 +185,7 @@ input[type=file]{
     width: 150px;
     color: #fff;
     border-radius: 5px;
+    -webkit-box-shadow: 2px 0px 10px 3px rgba(0, 0, 0, 0.27); 
+-moz-box-shadow: 2px 0px 10px 3px rgba(0, 0, 0, 0.27); 
+box-shadow: 2px 0px 10px 3px rgba(0, 0, 0, 0.27);
   }

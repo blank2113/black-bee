@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import "./addProdWindow.css";
 import {
   getFormDataName,
@@ -14,8 +14,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useAddNewProductMutation } from "../../store/middlewares/productsApi";
 
-function AddProdWindow({brand,category,types}) {
- 
+function AddProdWindow({brand,category,types,status}) {
   const name = useSelector(state => state.getFormData.name)
   const price = useSelector(state => state.getFormData.price)
   const status_id = useSelector(state => state.getFormData.status_id)
@@ -24,7 +23,7 @@ function AddProdWindow({brand,category,types}) {
   const category_id = useSelector(state => state.getFormData.category_id)
   const [image, setImage] = useState(null)
   const dispatch = useDispatch();
-  const [addNewProd, { isError }] = useAddNewProductMutation();
+  const [addNewProd] = useAddNewProductMutation();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -39,21 +38,17 @@ function AddProdWindow({brand,category,types}) {
 
     if (formData) {
       await addNewProd(formData);
-    
+      dispatch(getStatusValue(false));
     }
-    dispatch(getStatusValue(false));
   };
 
   return (
-    <motion.div className="addProdWindow">
-      <motion.div
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        exit={{ opacity: 0, scale: 0 }}
-        className="addProdWindow-inner"
-      >
+    <motion.div className="addProdWindow"
+    initial={{ opacity: 0, scale: 0 }}
+        animate={ status ? { opacity: 1, scale: 1 } : {opacity:0,scale:0}}
+        exit={{ opacity: 0, scale: 0 }}>
+      <motion.div className="addProdWindow-inner">
         <p>Создание товара</p>
-
         <form>
           <div className="prod-name">
             <label htmlFor="name">Имя:</label>
@@ -137,15 +132,23 @@ function AddProdWindow({brand,category,types}) {
             />
           </div>
           <div className="btns">
-            <button onClick={handleSubmit} className="create-btn">
+            <motion.button 
+            initial={{scale:1}}
+            whileHover={{scale:1.03}}
+            whileTap={{scale:1}}
+            onClick={handleSubmit} className="create-btn">
               Создать
-            </button>
-            <button
+            </motion.button>
+            <motion.button
+              initial={{scale:1}}
+              whileHover={{scale:1.03}}
+              whileTap={{scale:1}}
               className="reset-btn"
-              onClick={() => dispatch(getStatusValue(false))}
+              onClick={(e) => {e.preventDefault()
+                 dispatch(getStatusValue(!status))}}
             >
               Отменить
-            </button>
+            </motion.button>
           </div>
         </form>
         <FontAwesomeIcon

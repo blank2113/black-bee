@@ -12,6 +12,11 @@ import ChangeStatus from "../components/changeStatus/ChangeStatus";
 import { useGetBrandsQuery } from "../store/middlewares/brandApi";
 import { useGetAnimalsQuery } from "../store/middlewares/animalsApi";
 import { useGetTypeQuery } from "../store/middlewares/typeApi";
+import { useGetProductsQuery } from "../store/middlewares/productsApi";
+import { useGetBestProductsQuery } from "../store/middlewares/bestProductApi";
+import { useGetBestSalesQuery } from "../store/middlewares/bestSalesApi";
+import AddBrandPanel from "../components/addBrandPanel/AddBrandPanel";
+import DelBrandPanel from "../components/delBrandPanel/DelBrandPanel";
 
 const blockAnimation = {
   hidden: {
@@ -59,6 +64,12 @@ function AdminPage() {
     {},
     { pollingInterval: 1000, refetchOnMountOrArgChange: true, skip: false }
   );
+  const {data: product=[]}= useGetProductsQuery({},
+    { pollingInterval: 1000, refetchOnMountOrArgChange: true, skip: false })
+  const {data: bestProducts=[]}= useGetBestProductsQuery(    {},
+    { pollingInterval: 1000, refetchOnMountOrArgChange: true, skip: false })
+  const {data: bestSales=[]}=useGetBestSalesQuery(    {},
+    { pollingInterval: 1000, refetchOnMountOrArgChange: true, skip: false })
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -83,14 +94,14 @@ function AdminPage() {
               <Categories />
             </motion.div>
           </div>
-          <Table />
+          <Table products={product}  bestProducts={bestProducts} bestSales={bestSales}/>
         </motion.div>
         <EditPanel />
         <ConfirmPanel active={getActivePanel} />
-        {getStatus && (
-          <AddProdWindow brand={brand} category={category} types={types} />
-        )}
-        {getActiveBtn && <ChangeStatus />}
+          <AddProdWindow brand={brand} category={category} types={types} status={getStatus}/>
+         <ChangeStatus active={getActiveBtn}/>
+         <AddBrandPanel/>
+         <DelBrandPanel brand={brand}/>
       </motion.div>
     </motion.div>
   );

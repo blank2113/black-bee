@@ -6,9 +6,8 @@ import {motion} from 'framer-motion'
 
 function ConfirmPanel({active}) {
   const getId = useSelector((state) => state.getId.value);
-  const getStatus = useSelector((state) => state.getStatus.value)
   const dispatch = useDispatch();
-  const [delProd,{}] = useDeleteProductMutation()
+  const [delProd] = useDeleteProductMutation()
 
   const handleDelete = async(e) => {
     e.preventDefault(); 

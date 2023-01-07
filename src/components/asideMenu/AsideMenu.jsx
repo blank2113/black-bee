@@ -12,7 +12,7 @@ import { getItem } from '../../store/slices/getAsideItem'
 function AsideMenu() {
     const dispatch = useDispatch();
     const getAsideItem = useSelector(state => state.getAsideItem.value)
-    const navItems =[{"id":1,"name": "Список товаров","icon":faList},{"id":2, "name": "Лучшие товары","icon":faCoins},{"id":3,"name":"Товары по скидку","icon":faPercent}]
+    const navItems =[{"id":1,"name": "Список товаров","icon":faList},{"id":2, "name": "Лучшие товары","icon":faCoins},{"id":3,"name":"Товары по скидке","icon":faPercent}]
   return (
     <div className='aside-menu'>
         <div className='aside-menu-inner'>

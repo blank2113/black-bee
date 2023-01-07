@@ -6,8 +6,23 @@ export const brandApi = createApi({
     endpoints: (builder) =>({
         getBrands: builder.query({
             query: ()=> 'brands'
+        }),
+        addBrands: builder.mutation({
+            query: (payload) =>({
+                url: 'brands',
+                method: 'POST',
+                body: payload,
+                headers: {"Authorization" : `bearer ${sessionStorage.getItem('token')}`}
+            })
+        }),
+        delBrands: builder.mutation({
+            query: (payload)=>({
+                url: `brands?id=${Number(payload)}`,
+                method: 'DELETE',
+                headers: {"Authorization" : `bearer ${sessionStorage.getItem('token')}`}
+            })
         })
     })
 })
 
-export const { useGetBrandsQuery} = brandApi;
+export const { useGetBrandsQuery, useAddBrandsMutation, useDelBrandsMutation} = brandApi;

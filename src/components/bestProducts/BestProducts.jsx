@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/scrollbar";
-import SwiperCore, { Scrollbar } from "swiper/core";
+import  { Scrollbar } from "swiper/core";
 import { Pagination, Navigation } from "swiper";
 import { useGetBestProductsQuery } from "../../store/middlewares/bestProductApi";
 

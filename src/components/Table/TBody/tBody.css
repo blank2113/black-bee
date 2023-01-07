@@ -2,14 +2,18 @@
 .listed{
     text-align: center;
 }
+tbody{
+    font-size: 18px;
+}
 tbody tr{
     cursor: pointer;
     transition: .2s;
+    
 }
 
 tbody tr.active{
-    background-color: rgba(10, 218, 83, 0.613);
-    color: #fff;
+    background-color: rgba(252, 218, 1, 0.544);
+    color: #000;
 }
 td{
     border-bottom: 1px solid #000 ;

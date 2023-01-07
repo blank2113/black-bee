@@ -1,16 +1,13 @@
 import React from 'react'
 import './tHead.css'
-import { useSelector} from 'react-redux'
+
 
 function THead() {
-  const getAsideItemName = useSelector(state => state.getAsideItem.value);
-  const variant1 = ["ID","Тип","Категория","Бренд","Имя","Цена","Статус"];
-  const variant2 = ["ID","Категория","Цена со скидкой","Цена","Статус"]
+  const variant = ["ID","Тип","Категория","Бренд","Имя","Цена","Статус"];
   return (
     <thead>
        <tr>
-        {getAsideItemName === "Список товаров"? variant1.map(item => <td key={item}>{item}</td>):
-        variant2.map(item => <td key={item}>{item}</td>)}
+        {variant.map(item => <td key={item}>{item}</td>)}
     </tr>
     </thead>
    

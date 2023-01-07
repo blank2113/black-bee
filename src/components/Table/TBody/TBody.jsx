@@ -13,20 +13,11 @@ const container = {
   show: {
     opacity: 1,
     transition: {
-      delayChildren: 3,
+      delayChildren: 2,
     },
   },
 };
-const itemA = {
-  hidden: { opacity: 0, scale: 0 },
-  show: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      duration: 0.5,
-    },
-  },
-};
+
 
 function TBody({ data }) {
   const { data: product = [] } = useGetProductsQuery(
@@ -46,9 +37,9 @@ function TBody({ data }) {
             .filter((e) => e.type.name === getCategories)
             .map((item) => (
               <motion.tr
-                variants={itemA}
-                initial="hidden"
-                animate="show"
+                initial={{opacity:0}}
+                animate={{opacity:1}}
+                exit={{opacity:0}}
                 className={getId === item.id ? "listed active" : "listed"}
                 key={item.id}
                 onClick={() => dispatch(getIdValue(item.id))}
@@ -59,14 +50,17 @@ function TBody({ data }) {
                 <td>{item.brand ? item.brand.name : null}</td>
                 <td>{item.name}</td>
                 <td>{item.price} сум</td>
-                <td>{item.stats ? item.status.in_stock : "---"}</td>
+                <td>{item.status?.in_stock === true ? 'В наличии' : "Нет в наличии"}</td>
                 <td>
                   <AdditionalEditPanel />
                 </td>
               </motion.tr>
             ))
         : data.map((item) => (
-            <tr
+            <motion.tr
+            initial={{opacity:0}}
+            animate={{opacity:1}}
+            exit={{opacity:0}}
               className={getId === item.id ? "listed active" : "listed"}
               key={item.id}
               onClick={() => dispatch(getIdValue(item.id))}
@@ -76,12 +70,12 @@ function TBody({ data }) {
               <td>{item.type ? item.type.name : null}</td>
               <td>{item.brand ? item.brand.name : null}</td>
               <td>{item.name}</td>
-              <td>{item.price}</td>
-              <td>{item.status ? item.status.in_stock : "---"}</td>
+              <td>{item.price} сум</td>
+              <td>{item.status?.in_stock === true? "В наличии" : "Нет в наличии"}</td>
               <td>
                 <AdditionalEditPanel />
               </td>
-            </tr>
+            </motion.tr>
           ))}
     </motion.tbody>
   );

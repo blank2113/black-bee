@@ -3,7 +3,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./bestSales.css";
-import SwiperCore, { Scrollbar } from "swiper/core";
+import { Scrollbar } from "swiper/core";
 import { Pagination, Navigation } from "swiper";
 import { useGetBestSalesQuery } from "../../store/middlewares/bestSalesApi";
 
