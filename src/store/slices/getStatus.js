@@ -4,6 +4,7 @@ const initialState = {
     value: false,
     brandStatus: false,
     brandDelStatus: false,
+    categoryStatus: false,
 }
 
 export const getStatusSlice = createSlice({
@@ -18,9 +19,12 @@ export const getStatusSlice = createSlice({
         },
         getBrandDelStatus: (state,action)=>{
             state.brandDelStatus = action.payload
+        },
+        getCategoryStatus: (state,action)=>{
+            state.categoryStatus = action.payload
         }
         }
     })
 
-export const { getStatusValue, getBrandStatus, getBrandDelStatus } = getStatusSlice.actions;
+export const { getStatusValue, getBrandStatus, getBrandDelStatus, getCategoryStatus } = getStatusSlice.actions;
 export default getStatusSlice.reducer

@@ -6,8 +6,16 @@ export const animalsApi = createApi({
     endpoints: (build) => ({
         getAnimals: build.query({
             query: ()=> 'categories',
+        }),
+        addNewCategory: build.mutation({
+            query: (payload) =>({
+                url: 'categories',
+                method: 'POST',
+                body: payload,
+                headers: {"Authorization" : `bearer ${sessionStorage.getItem('token')}`}
+            })
         })
     })
 })
 
-export const {useGetAnimalsQuery}= animalsApi;
+export const {useGetAnimalsQuery, useAddNewCategoryMutation}= animalsApi;

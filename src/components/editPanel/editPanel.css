@@ -72,3 +72,11 @@
     margin-left: 7px;
     align-self: left;
 }
+.add-category{
+    background-color: rgb(240, 218, 77);
+    color: #000;
+    margin-left: 20px;
+}
+.add-category-i{
+    margin-right: 7px;
+}

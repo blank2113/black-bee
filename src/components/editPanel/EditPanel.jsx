@@ -1,9 +1,10 @@
 import './editPanel.css'
 import { FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import { faPlus, faLayerGroup, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faPlus, faLayerGroup, faTrash, faPaw } from '@fortawesome/free-solid-svg-icons'
 import { motion } from 'framer-motion'
 import { useSelector,useDispatch } from 'react-redux'
-import { getStatusValue,getBrandStatus, getBrandDelStatus} from '../../store/slices/getStatus' 
+import { getStatusValue,getBrandStatus, getBrandDelStatus, getCategoryStatus} from '../../store/slices/getStatus' 
+
 
 
 function EditPanel() {
@@ -24,11 +25,15 @@ function EditPanel() {
             </motion.button>
             <button className='add-brand' onClick={()=> dispatch(getBrandStatus(true))}>
               <FontAwesomeIcon className='add-brand-i' icon={faLayerGroup}/>
-              <p>Добавить Бренд</p> 
+              <p>Бренд</p> 
             </button>
             <button className='del-brand' onClick={()=> dispatch(getBrandDelStatus(true))}>
               <FontAwesomeIcon className='del-brand-i' icon={faTrash}/>
-              <p>Удалить Бренд</p> 
+              <p>Бренд</p> 
+            </button>
+            <button className='add-category' onClick={()=> dispatch(getCategoryStatus(true))}>
+              <FontAwesomeIcon className='add-category-i' icon={faPaw}/>
+              <p> Бренд</p> 
             </button>
         </div>
     </motion.div>
