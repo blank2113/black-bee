@@ -1,34 +1,31 @@
-.AddCategoryPanel{
+.RemoveCategoryPanel{
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.596);
     position: absolute;
     top: 0;
+    left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 200;
-
+    background-color: rgba(0, 0, 0, 0.596);
+    z-index: 300;
 }
-.AddCategoryPanel-inner{
+.RemoveCategoryPanel-wrapper{
     background-color: #fff;
+    border-radius: 20px;
     width: 500px;
+    padding: 40px;
+    display: flex;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 40px;
-    border-radius: 20px;
     position: relative;
 }
-.AddCategoryPanel-inner form{
-    margin: 40px 0;
-    display: grid;
-    grid-template-columns: .3fr 1fr;
-    font-weight: 500;
-    font-size: 20px;
-}
-.AddCategoryPanel-inner p{
+.RemoveCategoryPanel-wrapper p {
     font-size: 25px;
     font-weight: 500;
+}
+.RemoveCategoryPanel-wrapper form{
+    margin: 40px 0;
 }

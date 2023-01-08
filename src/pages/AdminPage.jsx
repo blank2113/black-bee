@@ -18,6 +18,7 @@ import { useGetBestSalesQuery } from "../store/middlewares/bestSalesApi";
 import AddBrandPanel from "../components/addBrandPanel/AddBrandPanel";
 import DelBrandPanel from "../components/delBrandPanel/DelBrandPanel";
 import AddCategoryPanel from '../components/addCategoryPanel/AddCategoryPanel'
+import RemoveCategoryPanel from "../components/removeCategoryPanel/RemoveCategoryPanel";
 
 const blockAnimation = {
   hidden: {
@@ -104,6 +105,7 @@ function AdminPage() {
          <AddBrandPanel/>
          <DelBrandPanel brand={brand}/>
          <AddCategoryPanel/>
+         <RemoveCategoryPanel category={category}/>
       </motion.div>
     </motion.div>
   );

@@ -80,3 +80,11 @@
 .add-category-i{
     margin-right: 7px;
 }
+.del-category{
+    background-color: rgb(232, 13, 13);
+    color: #000;
+    margin-left: 20px;
+}
+.del-category-i{
+    margin-right: 7px;
+}

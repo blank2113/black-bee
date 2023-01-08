@@ -14,8 +14,15 @@ export const animalsApi = createApi({
                 body: payload,
                 headers: {"Authorization" : `bearer ${sessionStorage.getItem('token')}`}
             })
+        }),
+        deleteCategory: build.mutation({
+            query: (payload) =>({
+                url: `categories?id=${payload}`,
+                method: 'delete',
+                headers: {"Authorization" : `bearer ${sessionStorage.getItem('token')}`}
+            })
         })
     })
 })
 
-export const {useGetAnimalsQuery, useAddNewCategoryMutation}= animalsApi;
+export const {useGetAnimalsQuery, useAddNewCategoryMutation, useDeleteCategoryMutation}= animalsApi;
