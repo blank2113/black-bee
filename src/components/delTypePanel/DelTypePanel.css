@@ -1,0 +1,37 @@
+.DelTypePanel{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.596);
+}
+.DelTypePanel-wrapper{
+    background-color: #fff;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    border-radius: 20px;
+    position: relative;
+}
+.DelTypePanel-wrapper form{
+    margin: 40px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-weight: 500;
+    font-size: 20px;
+}
+.DelTypePanel-wrapper form select{
+   margin-left: 10px;
+}
+.DelTypePanel-wrapper p{
+    font-size: 25px;
+    font-weight: 500;
+}

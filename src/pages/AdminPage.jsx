@@ -19,6 +19,8 @@ import AddBrandPanel from "../components/addBrandPanel/AddBrandPanel";
 import DelBrandPanel from "../components/delBrandPanel/DelBrandPanel";
 import AddCategoryPanel from '../components/addCategoryPanel/AddCategoryPanel'
 import RemoveCategoryPanel from "../components/removeCategoryPanel/RemoveCategoryPanel";
+import AddTypePanel from "../components/addTypePanel/AddTypePanel";
+import DelTypePanel from "../components/delTypePanel/DelTypePanel";
 
 const blockAnimation = {
   hidden: {
@@ -106,6 +108,8 @@ function AdminPage() {
          <DelBrandPanel brand={brand}/>
          <AddCategoryPanel/>
          <RemoveCategoryPanel category={category}/>
+         <AddTypePanel />
+         <DelTypePanel types={types}/>
       </motion.div>
     </motion.div>
   );

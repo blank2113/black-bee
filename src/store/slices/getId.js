@@ -6,6 +6,8 @@ const initialState ={
     brandId: '',
     categoryName:'',
     categoryId:'',
+    typeId: '',
+    typeName:''
 }
 
 export const getIdSlice= createSlice({
@@ -26,9 +28,15 @@ export const getIdSlice= createSlice({
         },
         getCategoryId: (state,action)=>{
             state.categoryId= action.payload
+        },
+        getTypeId: (state,action) =>{
+            state.typeId = action.payload
+        },
+        getTypeName: (state,action) =>{
+            state.typeName = action.payload
         }
     }
 })
 
-export const {getIdValue, setBrandName, getBrandId, getCategoryName,getCategoryId} = getIdSlice.actions;
+export const {getIdValue, setBrandName, getBrandId, getCategoryName,getCategoryId, getTypeName,getTypeId} = getIdSlice.actions;
 export default getIdSlice.reducer 

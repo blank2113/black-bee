@@ -88,3 +88,16 @@
 .del-category-i{
     margin-right: 7px;
 }
+.add-type {
+  margin:0 20px;
+  background-color: coral;
+}
+.add-type-i {
+  margin-right: 7px;
+}
+.del-type {
+    background-color: rgb(232, 13, 13);
+}
+.del-type-i {
+  margin-right: 7px;
+}

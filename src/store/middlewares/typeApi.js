@@ -6,8 +6,23 @@ export const typeApi = createApi({
     endpoints: (build)=> ({
         getType: build.query({
             query: ()=> 'types',
+        }),
+        addType: build.mutation({
+            query: (payload) =>({
+                url:'types',
+                method: 'POST',
+                body:payload,
+                headers: {"Authorization" : `bearer ${sessionStorage.getItem('token')}`}
+            })
+        }),
+        delType: build.mutation({
+            query: (payload) =>({
+                url: `types?id=${payload}`,
+                method: 'delete',
+                headers: {"Authorization" : `bearer ${sessionStorage.getItem('token')}`}
+            })
         })
     })
 })
 
-export const { useGetTypeQuery } = typeApi;
+export const { useGetTypeQuery , useAddTypeMutation, useDelTypeMutation} = typeApi;

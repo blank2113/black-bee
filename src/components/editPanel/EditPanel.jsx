@@ -5,15 +5,18 @@ import {
   faLayerGroup,
   faTrash,
   faPaw,
+  faListCheck
 } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   getStatusValue,
   getBrandStatus,
   getBrandDelStatus,
   getCategoryStatus,
-  getCategoryStatusDel
+  getCategoryStatusDel,
+  getTypeStatus,
+  getTypeStatusDel
 } from "../../store/slices/getStatus";
 
 function EditPanel() {
@@ -59,6 +62,20 @@ function EditPanel() {
         >
           <FontAwesomeIcon className="del-category-i" icon={faTrash} />
           <p> Категория</p>
+        </button>
+        <button
+          className="add-type"
+          onClick={()=> dispatch(getTypeStatus(true))}
+        >
+          <FontAwesomeIcon className="add-type-i" icon={faListCheck} />
+          <p> Тип</p>
+        </button>
+        <button
+          className="del-type"
+          onClick={()=> dispatch(getTypeStatusDel(true))}
+        >
+          <FontAwesomeIcon className="del-type-i" icon={faTrash} />
+          <p>Тип</p>
         </button>
       </div>
     </motion.div>
