@@ -1,21 +1,36 @@
-import { getTypeId } from "../../store/slices/getId";
 import "./SubMenu.css";
-import { useSelector,useDispatch } from "react-redux";
+import { getTypeId } from "../../store/slices/getId";
+import { useSelector, useDispatch } from "react-redux";
+import { motion, AnimatePresence } from "framer-motion";
 
 function SubMenu({ types }) {
-    const typeId = useSelector(state => state.getId.typeId)
+  const typeId = useSelector((state) => state.getId.typeId);
   const dispatch = useDispatch();
   return (
-    <div className="subMenu">
-      <ul className="subMenu-inner">
-        {types.map((item) => (
-          <li className={typeId === item.id ? 'subMenu-inner__item active' : 'subMenu-inner__item'} 
-          key={item.id} onClick={() => dispatch(getTypeId(item.id))}>
-            {item.name}
-          </li>
-        ))}
-      </ul>
-    </div>
+    <AnimatePresence>
+      <div className="subMenu">
+        <motion.ul
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="subMenu-inner"
+        >
+          {types.map((item) => (
+            <li
+              className={
+                typeId === item.id
+                  ? "subMenu-inner__item active"
+                  : "subMenu-inner__item"
+              }
+              key={item.id}
+              onClick={() => dispatch(getTypeId(item.id))}
+            >
+              {item.name}
+            </li>
+          ))}
+        </motion.ul>
+      </div>
+    </AnimatePresence>
   );
 }
 

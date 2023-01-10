@@ -1,5 +1,5 @@
-import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import {motion, AnimatePresence} from 'framer-motion'
 import "./bestProducts.css";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -15,9 +15,14 @@ function BestProducts() {
     { pollingInterval: 3000, refetchOnMountOrArgChange: true, skip: false }
   );
   return (
+    <AnimatePresence>
     <section className="best-products">
       <div className="container">
-        <h4 className="title">Самые востребованные товары</h4>
+        <motion.h4 
+        initial={{opacity: 0, x: -400}}
+        whileInView={{opacity: 1, x:0 }}
+        transition={{duration: .3}}
+        className="title">Самые востребованные товары</motion.h4>
         <Swiper
           slidesPerView={4}
           spaceBetween={30}
@@ -58,6 +63,7 @@ function BestProducts() {
         </Swiper>
       </div>
     </section>
+    </AnimatePresence>
   );
 }
 

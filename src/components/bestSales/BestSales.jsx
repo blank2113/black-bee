@@ -3,6 +3,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./bestSales.css";
+import {motion, AnimatePresence} from 'framer-motion'
 import { Scrollbar } from "swiper/core";
 import { Pagination, Navigation } from "swiper";
 import { useGetBestSalesQuery } from "../../store/middlewares/bestSalesApi";
@@ -10,9 +11,14 @@ import { useGetBestSalesQuery } from "../../store/middlewares/bestSalesApi";
 function BestSales() {
   const { data = [] } = useGetBestSalesQuery();
   return (
+    <AnimatePresence>
     <section className="best-sales">
       <div className="container">
-        <h5 className="title">Успейте купить по лучшей цене!</h5>
+        <motion.h5 
+         initial={{opacity: 0, x: -400}}
+        whileInView={{opacity: 1, x:0 }}
+        transition={{duration: .3}}
+        className="title">Успейте купить по лучшей цене!</motion.h5>
         <Swiper
           slidesPerView={4}
           spaceBetween={30}
@@ -53,6 +59,7 @@ function BestSales() {
         </Swiper>
       </div>
     </section>
+    </AnimatePresence>
   );
 }
 

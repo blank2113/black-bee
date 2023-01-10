@@ -32,7 +32,7 @@ const blockAnimation = {
   }),
 };
 
-function Catalog({types}) {
+function Catalog({types, animals}) {
   return (
     <motion.section
       className="catalog"
@@ -54,7 +54,7 @@ function Catalog({types}) {
           <FontAwesomeIcon icon={faBarsStaggered} />
         </motion.div>
         <div className="catalog-inner__nav">
-          <Menu />
+          <Menu animals={animals}/>
         </div>
           <SubMenu types={types}/>
         <div>
