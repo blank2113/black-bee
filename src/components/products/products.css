@@ -8,10 +8,9 @@
 }
 .products-inner{
      display: flex;
-     flex-direction: column;
+     flex-wrap: wrap;
      align-items: center;
      justify-content: center;
-     /* gap: 50px; */
      text-align: center;
 }
 .products-inner h3{
@@ -25,10 +24,9 @@
 .products-inner__card-wrapper{
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
     justify-content: space-around;
     align-items: center;
-    padding: 20px 30px;
+    padding: 20px 20px;
     margin:  50px 0;
 }
 .products-inner__card-wrapper li + .products-inner__card-wrapper li{
@@ -78,6 +76,10 @@
     }
     .products-inner__card-wrapper li span{
         font-size: 18px;
+    }
+    .products-inner__card-wrapper{
+        margin:  20px 0;
+        padding: 10px 10px;
     }
 }
 @media (max-width: 540px){

@@ -17,7 +17,7 @@ import { useGetBestProductsQuery } from "../store/middlewares/bestProductApi";
 import { useGetBestSalesQuery } from "../store/middlewares/bestSalesApi";
 import AddBrandPanel from "../components/addBrandPanel/AddBrandPanel";
 import DelBrandPanel from "../components/delBrandPanel/DelBrandPanel";
-import AddCategoryPanel from '../components/addCategoryPanel/AddCategoryPanel'
+import AddCategoryPanel from "../components/addCategoryPanel/AddCategoryPanel";
 import RemoveCategoryPanel from "../components/removeCategoryPanel/RemoveCategoryPanel";
 import AddTypePanel from "../components/addTypePanel/AddTypePanel";
 import DelTypePanel from "../components/delTypePanel/DelTypePanel";
@@ -68,12 +68,18 @@ function AdminPage() {
     {},
     { pollingInterval: 1000, refetchOnMountOrArgChange: true, skip: false }
   );
-  const {data: product=[]}= useGetProductsQuery({},
-    { pollingInterval: 1000, refetchOnMountOrArgChange: true, skip: false })
-  const {data: bestProducts=[]}= useGetBestProductsQuery(    {},
-    { pollingInterval: 1000, refetchOnMountOrArgChange: true, skip: false })
-  const {data: bestSales=[]}=useGetBestSalesQuery(    {},
-    { pollingInterval: 1000, refetchOnMountOrArgChange: true, skip: false })
+  const { data: product = [] } = useGetProductsQuery(
+    {},
+    { pollingInterval: 1000, refetchOnMountOrArgChange: true, skip: false }
+  );
+  const { data: bestProducts = [] } = useGetBestProductsQuery(
+    {},
+    { pollingInterval: 1000, refetchOnMountOrArgChange: true, skip: false }
+  );
+  const { data: bestSales = [] } = useGetBestSalesQuery(
+    {},
+    { pollingInterval: 1000, refetchOnMountOrArgChange: true, skip: false }
+  );
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -98,18 +104,27 @@ function AdminPage() {
               <Categories />
             </motion.div>
           </div>
-          <Table products={product}  bestProducts={bestProducts} bestSales={bestSales}/>
+          <Table
+            products={product}
+            bestProducts={bestProducts}
+            bestSales={bestSales}
+          />
         </motion.div>
         <EditPanel />
         <ConfirmPanel active={getActivePanel} />
-          <AddProdWindow brand={brand} category={category} types={types} status={getStatus}/>
-         <ChangeStatus active={getActiveBtn}/>
-         <AddBrandPanel/>
-         <DelBrandPanel brand={brand}/>
-         <AddCategoryPanel/>
-         <RemoveCategoryPanel category={category}/>
-         <AddTypePanel />
-         <DelTypePanel types={types}/>
+        <AddProdWindow
+          brand={brand}
+          category={category}
+          types={types}
+          status={getStatus}
+        />
+        <ChangeStatus active={getActiveBtn} />
+        <AddBrandPanel />
+        <DelBrandPanel brand={brand} />
+        <AddCategoryPanel />
+        <RemoveCategoryPanel category={category} />
+        <AddTypePanel />
+        <DelTypePanel types={types} />
       </motion.div>
     </motion.div>
   );

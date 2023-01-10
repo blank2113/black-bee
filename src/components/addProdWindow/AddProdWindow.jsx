@@ -22,6 +22,9 @@ function AddProdWindow({brand,category,types,status}) {
   const type_id = useSelector(state => state.getFormData.type_id)
   const category_id = useSelector(state => state.getFormData.category_id)
   const [image, setImage] = useState(null)
+  const [in_stock, setIn_stock] = useState(true)
+  const [in_sales, setIn_sales] = useState(false)
+  const [in_popular, setIn_popular] = useState(false)
   const dispatch = useDispatch();
   const [addNewProd] = useAddNewProductMutation();
 
@@ -35,9 +38,12 @@ function AddProdWindow({brand,category,types,status}) {
     formData.append("type_id", type_id);
     formData.append("category_id", category_id);
     formData.append("image", image);
+    formData.append("in_sales",in_sales)
+    formData.append("in_stock",in_stock)
+    formData.append("in_popular",in_popular)
 
     if (formData) {
-      await addNewProd(formData);
+      await addNewProd(formData).then(res => console.log(res)).catch(err=> console.log(err));
       dispatch(getStatusValue(false));
     }
   };
@@ -117,6 +123,51 @@ function AddProdWindow({brand,category,types,status}) {
                   {item.name}
                 </option>
               ))}
+            </select>
+            <div className="select-arrow">
+              <div className="arrow-up"></div>
+              <div className="arrow-down"></div>
+            </div>
+          </div>
+          <div className="wrap-select-arrow">
+            <label htmlFor="group">Наличие:</label>
+            <select name="in_stoke" onChange={e => setIn_stock(e.target.value)}>
+              <option name="true" value={true}>
+                В наличии
+              </option>
+              <option name="false" value={false}>
+                Нет в наличии
+              </option>
+            </select>
+            <div className="select-arrow">
+              <div className="arrow-up"></div>
+              <div className="arrow-down"></div>
+            </div>
+          </div> 
+          <div className="wrap-select-arrow">
+            <label htmlFor="in_popular">Лучшие товары:</label>
+            <select name="in_popular" onChange={e => setIn_popular(e.target.value)}>
+              <option name="true" value={true}>
+                да
+              </option>
+              <option name="false" value={false}>
+                нет
+              </option>
+            </select>
+            <div className="select-arrow">
+              <div className="arrow-up"></div>
+              <div className="arrow-down"></div>
+            </div>
+          </div>
+          <div className="wrap-select-arrow">
+            <label htmlFor="in_sales">Товары по скидке:</label>
+            <select name="in_sales" onChange={e => setIn_sales(e.target.value)}>
+              <option name="true" value={true}>
+                да
+              </option>
+              <option name="false" value={false}>
+                нет
+              </option>
             </select>
             <div className="select-arrow">
               <div className="arrow-up"></div>

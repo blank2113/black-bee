@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBarsStaggered } from "@fortawesome/free-solid-svg-icons";
 import Menu from "../menu/Menu";
 import Products from "../products/Products";
+import SubMenu from "../SubMenu/SubMenu";
 
 
 const textAnimation = {
@@ -31,7 +32,7 @@ const blockAnimation = {
   }),
 };
 
-function Catalog() {
+function Catalog({types}) {
   return (
     <motion.section
       className="catalog"
@@ -55,6 +56,7 @@ function Catalog() {
         <div className="catalog-inner__nav">
           <Menu />
         </div>
+          <SubMenu types={types}/>
         <div>
           <Products />
         </div>

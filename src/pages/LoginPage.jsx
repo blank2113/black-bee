@@ -50,19 +50,6 @@ function LoginPage() {
     }
   };
 
-  // const getToken = () => {
-  //   const formData2 = new FormData();
-  //   formData2.append('username', getInputUserName);
-  //   formData2.append('password',getInputValue)
-
-  //   axios({
-  //     method: 'POST',
-  //     url: 'http://164.92.147.133:8000/token',
-  //     data: formData2,
-  //   }).then((res) =>  dispatch(getTokenData(sessionStorage.setItem('token', res.data.access_token))))
-  //   .catch((e) => console.log(e));
-  // };
-
   const goAdmin = () => {
     navigate("/admin");
   };
@@ -120,9 +107,6 @@ function LoginPage() {
           {/* <button onClick={()=> dispatch(saveTokenData())}></button> */}
           {isSuccess ? goAdmin() : console.log(isSuccess)}
         </motion.div>
-        <button onClick={() => console.log(sessionStorage.getItem("token"))}>
-          aaa
-        </button>
       </div>
     </motion.div>
   );

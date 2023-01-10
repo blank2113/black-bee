@@ -5,37 +5,40 @@ import "./products.css";
 
 function Products() {
   const getType = useSelector((state) => state.getType.value);
+  const typeId = useSelector((state) => state.getId.typeId);
   const { data = [] } = useGetProductsQuery(
     {},
     { pollingInterval: 3000, refetchOnMountOrArgChange: true, skip: false }
   );
-  console.log(
-    data
-      .filter((el) => el.category)
-      .filter((elem) => elem.category.id === getType)
-  );
   return (
     <div className="products">
       <div>
-        {getType === 10
-          ? data.map((item) => (
-              <div key={item.id} className="products-inner container">
-                <h3>{item.type ? item.type.name : null}</h3>
-                <div className="products-inner__card-wrapper">
-                  <li key={item.key}>
-                    <img src={item.image} alt="product-img" />
-                    <p>{item.name}</p>
-                    <span>{item.price} cум</span>
-                  </li>
-                </div>
-              </div>
-            ))
-          : data
-              .filter((el) => el.category)
-              .filter((elem) => elem.category.id === getType)
+        {getType === 10 ? (
+          <div className="products-inner ">
+            {data
+              .filter((el) => el.type.id === typeId)
               .map((item) => (
-                <div key={item.id} className="products-inner container">
-                  <h3>{item.type ? item.type.name : null}</h3>
+                <div key={item.id}>
+                  <div className="products-inner__card-wrapper">
+                    <li key={item.key}>
+                      <img src={item.image} alt="product-img" />
+                      <p>{item.name}</p>
+                      <span>{item.price} cум</span>
+                    </li>
+                  </div>
+                </div>
+              ))}
+          </div>
+        ) : (
+          <div className="products-inner">
+            {data
+              .filter((el) => el.category && el.type)
+              .filter(
+                (elem) =>
+                  elem.category.id === getType && elem.type.id === typeId
+              )
+              .map((item) => (
+                <div key={item.id}>
                   <div className="products-inner__card-wrapper">
                     <li>
                       <img src={item.image} alt="product-img" />
@@ -45,6 +48,8 @@ function Products() {
                   </div>
                 </div>
               ))}
+          </div>
+        )}
       </div>
     </div>
   );

@@ -46,7 +46,7 @@ function BestSales() {
           {data.map((item) => (
             <SwiperSlide className="swiper-card" key={item.id}>
               <img src={item.picture} alt="2" />
-              <p className="swiper-card__prev">{item.prevPrice} сум</p>
+              <p className="card-text">{item.name}</p>
               <p className="swiper-card__curr">{item.price} сум</p>
             </SwiperSlide>
           ))}

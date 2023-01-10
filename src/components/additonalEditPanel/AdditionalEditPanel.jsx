@@ -15,9 +15,9 @@ function AdditionalEditPanel() {
   return (
     <div className="additional-edit-panel">
       <div className="additional-edit-panel__inner">
-        <FontAwesomeIcon className="adde-btn" icon={faEllipsis} 
+        {/* <FontAwesomeIcon className="adde-btn" icon={faEllipsis} 
           onClick={ () => dispatch(getActiveBtnValue(true))}
-        />
+        /> */}
         <FontAwesomeIcon
           className="del-btn"
           icon={faTrashCan}

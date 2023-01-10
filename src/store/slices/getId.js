@@ -6,7 +6,7 @@ const initialState ={
     brandId: '',
     categoryName:'',
     categoryId:'',
-    typeId: '',
+    typeId: 1,
     typeName:''
 }
 
