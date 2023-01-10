@@ -23,8 +23,8 @@ function AddProdWindow({brand,category,types,status}) {
   const category_id = useSelector(state => state.getFormData.category_id)
   const [image, setImage] = useState(null)
   const [in_stock, setIn_stock] = useState(true)
-  const [in_sales, setIn_sales] = useState(false)
-  const [in_popular, setIn_popular] = useState(false)
+  const [in_sales, setIn_sales] = useState(true)
+  const [in_popular, setIn_popular] = useState(true)
   const dispatch = useDispatch();
   const [addNewProd] = useAddNewProductMutation();
 
@@ -39,8 +39,8 @@ function AddProdWindow({brand,category,types,status}) {
     formData.append("category_id", category_id);
     formData.append("image", image);
     formData.append("in_sales",in_sales)
-    formData.append("in_stock",in_stock)
     formData.append("in_popular",in_popular)
+    formData.append("in_stock",in_stock)
 
     if (formData) {
       await addNewProd(formData).then(res => console.log(res)).catch(err=> console.log(err));

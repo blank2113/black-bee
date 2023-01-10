@@ -6,7 +6,7 @@ const initialState = {
   status_id: "",
   brand_id: Number(1),
   type_id: Number(1),
-  category_id: Number(4),
+  category_id: Number(1),
 };
 
 export const getFormDataSlice = createSlice({
