@@ -4,31 +4,7 @@ import telegram from "../../assets/telegram.svg";
 import insta from "../../assets/insta.svg";
 import { YMaps, Map, Placemark } from "@pbe/react-yandex-maps";
 import { motion } from "framer-motion";
-
-const textAnimation = {
-  hidden: {
-    x: -100,
-    opacity: 0,
-  },
-  visible: (custom) => ({
-    x: 0,
-    opacity: 1,
-    transition: { delay: custom * 0.2 },
-  }),
-};
-
-const imgAnimation = {
-  hidden: {
-    transform: { scale: 0 },
-    opacity: 0,
-  },
-  visible: custom=>({
-    transition: { delay: custom * 0.2 },
-    transform: { scale: 1 },
-    opacity: 1,
-  }),
-};
-
+import {imgAnimation, textAnimation} from '../../animation/animation.js'
 
 function Contacts() {
   const defaultState = {

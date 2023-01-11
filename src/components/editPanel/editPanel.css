@@ -1,103 +1,115 @@
-.edit-panel{
-    position: absolute;
-    bottom: 0;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-    background-color: #fff;
-    width: 98vw;
+.edit-panel {
+  position: absolute;
+  bottom: 0;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  background-color: #fff;
+  width: 98vw;
 }
-.edit-panel-inner{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 15px;
+.edit-panel-inner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  font-size: 18px;
+}
+.edit-panel-inner button {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr;
+  padding: 2px 10px;
+  /* padding: 2px 20px; */
+  text-align: center;
+  color: #fff;
+  border: transparent;
+  border-radius: 7px;
+  cursor: pointer;
+}
 
+.delete-btn {
+  background-color: rgb(232, 13, 13);
 }
-.edit-panel-inner button{
-    display: grid;
-    align-items: center;
-    grid-template-columns: auto 1fr;
-    padding: 2px 10px;
-    /* padding: 2px 20px; */
-    text-align: center;
-    color: #fff;
-    border: transparent;
-    border-radius: 7px;
-    cursor: pointer;
-}
-
-.delete-btn{ 
-    background-color: rgb(232, 13, 13);
-}
-.add-btn{
-    background-color: rgb(8, 173, 8);
-    margin-right: 20px;
+.add-btn {
+  background-color: rgb(8, 173, 8);
+  /* margin-right: 20px; */
 }
 .add-btn p {
-    margin-left: 7px;
-    align-self: left;
+  margin-left: 7px;
+  align-self: left;
 }
-.add-brand{
-    display: grid;
-    align-items: center;
-    grid-template-columns: auto 1fr;
-    padding: 2px 10px;
-    /* padding: 2px 20px; */
-    text-align: center;
-    color: #fff;
-    border: transparent;
-    border-radius: 7px;
-    cursor: pointer;
-    background-color: rgb(31, 31, 232);
+.add-brand {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr;
+  padding: 2px 10px;
+  /* padding: 2px 20px; */
+  text-align: center;
+  color: #fff;
+  border: transparent;
+  border-radius: 7px;
+  cursor: pointer;
+  background-color: rgb(31, 31, 232);
 }
-.add-brand-i{
-    margin-right: 7px;
+.add-brand-i {
+  margin-right: 7px;
 }
-.del-brand{
-    display: grid;
-    align-items: center;
-    grid-template-columns: auto 1fr;
-    padding: 2px 10px;
-    /* padding: 2px 20px; */
-    text-align: center;
-    color: #fff;
-    border: transparent;
-    border-radius: 7px;
-    cursor: pointer;
-    background-color: rgb(232, 13, 13);
-    margin-left: 20px;
+.del-brand {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr;
+  padding: 2px 10px;
+  /* padding: 2px 20px; */
+  text-align: center;
+  color: #fff;
+  border: transparent;
+  border-radius: 7px;
+  cursor: pointer;
+  background-color: rgb(232, 13, 13);
+  /* margin-left: 20px; */
 }
-.del-brand p{
-    margin-left: 7px;
-    align-self: left;
+.del-brand p {
+  margin-left: 7px;
+  align-self: left;
 }
-.add-category{
-    background-color: rgb(240, 218, 77);
-    color: #000;
-    margin-left: 20px;
+.add-category {
+  background-color: rgb(240, 218, 77);
+  color: #000;
+  /* margin-left: 20px; */
 }
-.add-category-i{
-    margin-right: 7px;
+.add-category-i {
+  margin-right: 7px;
 }
-.del-category{
-    background-color: rgb(232, 13, 13);
-    color: #000;
-    margin-left: 20px;
+.del-category {
+  background-color: rgb(232, 13, 13);
+  color: #000;
+  /* margin-left: 20px; */
 }
-.del-category-i{
-    margin-right: 7px;
+.del-category-i {
+  margin-right: 7px;
 }
 .add-type {
-  margin:0 20px;
+  /* margin:0 20px; */
   background-color: coral;
 }
 .add-type-i {
   margin-right: 7px;
 }
 .del-type {
-    background-color: rgb(232, 13, 13);
+  background-color: rgb(232, 13, 13);
 }
 .del-type-i {
   margin-right: 7px;
+}
+
+@media (max-width: 1024px) {
+  .edit-panel-inner {
+    font-size: 16px;
+  }
+}
+@media (max-width: 920px) {
+  .edit-panel-inner {
+    font-size: 14px;
+  }
 }

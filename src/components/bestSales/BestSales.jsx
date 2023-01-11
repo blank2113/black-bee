@@ -3,22 +3,22 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./bestSales.css";
-import {motion, AnimatePresence} from 'framer-motion'
+import { motion} from "framer-motion";
 import { Scrollbar } from "swiper/core";
 import { Pagination, Navigation } from "swiper";
-import { useGetBestSalesQuery } from "../../store/middlewares/bestSalesApi";
+import { textAnimation } from "../../animation/animation.js";
 
-function BestSales() {
-  const { data = [] } = useGetBestSalesQuery();
+function BestSales({bestSales}) {
   return (
-    <AnimatePresence>
-    <section className="best-sales">
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      className="best-sales"
+    >
       <div className="container">
-        <motion.h5 
-         initial={{opacity: 0, x: -400}}
-        whileInView={{opacity: 1, x:0 }}
-        transition={{duration: .3}}
-        className="title">Успейте купить по лучшей цене!</motion.h5>
+        <motion.h5 variants={textAnimation} custom={2} className="title">
+          Успейте купить по лучшей цене!
+        </motion.h5>
         <Swiper
           slidesPerView={4}
           spaceBetween={30}
@@ -49,7 +49,7 @@ function BestSales() {
           }}
           className="swiper"
         >
-          {data.map((item) => (
+          {bestSales.map((item) => (
             <SwiperSlide className="swiper-card" key={item.id}>
               <img src={item.picture} alt="2" />
               <p className="card-text">{item.name}</p>
@@ -58,8 +58,7 @@ function BestSales() {
           ))}
         </Swiper>
       </div>
-    </section>
-    </AnimatePresence>
+    </motion.section>
   );
 }
 

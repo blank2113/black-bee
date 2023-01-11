@@ -21,36 +21,8 @@ import AddCategoryPanel from "../components/addCategoryPanel/AddCategoryPanel";
 import RemoveCategoryPanel from "../components/removeCategoryPanel/RemoveCategoryPanel";
 import AddTypePanel from "../components/addTypePanel/AddTypePanel";
 import DelTypePanel from "../components/delTypePanel/DelTypePanel";
+import {blockAnimation, variants} from '../animation/animation.js'
 
-const blockAnimation = {
-  hidden: {
-    y: -200,
-    opacity: 0,
-  },
-  visible: (custom) => ({
-    y: 0,
-    opacity: 1,
-    transition: { delay: custom * 0.2 },
-  }),
-};
-export const variants = {
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      ease: "easeOut",
-      duration: 0.5,
-    },
-  },
-  hide: {
-    y: -200,
-    opacity: 0,
-    transition: {
-      ease: "easeOut",
-      duration: 0.3,
-    },
-  },
-};
 function AdminPage() {
   const getStatus = useSelector((state) => state.getStatus.value);
   const getAsideItem = useSelector((state) => state.getAsideItem.value);
@@ -101,7 +73,7 @@ function AdminPage() {
               animate={getAsideItem === "Список товаров" ? "show" : "hide"}
               variants={variants}
             >
-              <Categories />
+              <Categories types={types}/>
             </motion.div>
           </div>
           <Table

@@ -1,4 +1,3 @@
-import React from "react";
 import "./catalog.css";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,38 +5,16 @@ import { faBarsStaggered } from "@fortawesome/free-solid-svg-icons";
 import Menu from "../menu/Menu";
 import Products from "../products/Products";
 import SubMenu from "../SubMenu/SubMenu";
+import {blockAnimation2, textAnimation} from '../../animation/animation.js'
 
 
-const textAnimation = {
-  hidden: {
-    x: -100,
-    opacity: 0,
-  },
-  visible: (custom) => ({
-    x: 0,
-    opacity: 1,
-    transition: { delay: custom * 0.2 },
-  }),
-};
 
-const blockAnimation = {
-  hidden: {
-    transform: { scale: 0 },
-    opacity: 0,
-  },
-  visible: (custom) => ({
-    transition: { delay: custom * 0.2 },
-    transform: { scale: 1 },
-    opacity: 1,
-  }),
-};
-
-function Catalog({types, animals}) {
+function Catalog({ types, animals, products }) {
   return (
     <motion.section
       className="catalog"
       initial="hidden"
-      variants={blockAnimation}
+      variants={blockAnimation2}
       whileInView="visible"
       id="goods"
     >
@@ -47,20 +24,19 @@ function Catalog({types, animals}) {
         </motion.h2>
         <motion.div
           custom={3}
-          variants={blockAnimation}
+          variants={blockAnimation2}
           className="catalog-inner__sub-title"
         >
           <p>Каталог</p>
           <FontAwesomeIcon icon={faBarsStaggered} />
         </motion.div>
         <div className="catalog-inner__nav">
-          <Menu animals={animals}/>
+          <Menu animals={animals} />
         </div>
-          <SubMenu types={types}/>
+        <SubMenu types={types} />
         <div>
-          <Products />
+          <Products data={products} />
         </div>
-      
       </div>
     </motion.section>
   );

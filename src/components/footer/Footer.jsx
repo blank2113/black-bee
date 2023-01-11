@@ -1,4 +1,3 @@
-import React from "react";
 import logof from "../../assets/logof.svg";
 import {useNavigate} from 'react-router-dom'
 import "./footer.css";

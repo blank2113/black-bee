@@ -1,15 +1,11 @@
-import { useGetProductsQuery } from "../../store/middlewares/productsApi";
 import { useSelector } from "react-redux";
 import "./products.css";
 import { motion, AnimatePresence } from "framer-motion";
 
-function Products() {
+function Products({ data }) {
   const getType = useSelector((state) => state.getType.value);
   const typeId = useSelector((state) => state.getId.typeId);
-  const { data = [] } = useGetProductsQuery(
-    {},
-    { pollingInterval: 3000, refetchOnMountOrArgChange: true, skip: false }
-  );
+
   return (
     <AnimatePresence>
       <div className="products">
@@ -18,7 +14,7 @@ function Products() {
             <motion.div
               initial={{ opacity: 0, scale: 0 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
+              transition={{ delay: 0.2 }}
               className="products-inner "
             >
               {data
@@ -39,7 +35,7 @@ function Products() {
             <motion.div
               initial={{ opacity: 0, scale: 0 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
+              transition={{ delay: 0.2 }}
               className="products-inner"
             >
               {data

@@ -1,28 +1,22 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import {motion, AnimatePresence} from 'framer-motion'
+import { motion } from "framer-motion";
 import "./bestProducts.css";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/scrollbar";
-import  { Scrollbar } from "swiper/core";
+import { Scrollbar } from "swiper/core";
 import { Pagination, Navigation } from "swiper";
-import { useGetBestProductsQuery } from "../../store/middlewares/bestProductApi";
+import { textAnimation } from "../../animation/animation.js";
 
-function BestProducts() {
-  const { data = [] } = useGetBestProductsQuery(
-    {},
-    { pollingInterval: 3000, refetchOnMountOrArgChange: true, skip: false }
-  );
+function BestProducts({bestProducts}) {
+
   return (
-    <AnimatePresence>
-    <section className="best-products">
+    <motion.section initial='hidden' whileInView='visible' className="best-products">
       <div className="container">
-        <motion.h4 
-        initial={{opacity: 0, x: -400}}
-        whileInView={{opacity: 1, x:0 }}
-        transition={{duration: .3}}
-        className="title">Самые востребованные товары</motion.h4>
+        <motion.h4 variants={textAnimation} custom={2} className="title">
+          Самые востребованные товары
+        </motion.h4>
         <Swiper
           slidesPerView={4}
           spaceBetween={30}
@@ -53,7 +47,7 @@ function BestProducts() {
           }}
           className="swiper"
         >
-          {data.map((item) => (
+          {bestProducts.map((item) => (
             <SwiperSlide className="swiper-card" key={item.id}>
               <img src={item.picture} alt="bestProducts-img" />
               <p className="card-text">{item.name}</p>
@@ -62,8 +56,7 @@ function BestProducts() {
           ))}
         </Swiper>
       </div>
-    </section>
-    </AnimatePresence>
+    </motion.section>
   );
 }
 

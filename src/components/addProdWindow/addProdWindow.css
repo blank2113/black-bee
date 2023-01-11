@@ -168,6 +168,7 @@ select {
   }
 input[type=file]{
     width: 300px;
+    cursor: pointer;
 }
 .create-btn {
   background-color: #4db955;
@@ -178,6 +179,7 @@ input[type=file]{
   -webkit-box-shadow: 2px 0px 10px 3px rgba(0, 0, 0, 0.27); 
 -moz-box-shadow: 2px 0px 10px 3px rgba(0, 0, 0, 0.27); 
 box-shadow: 2px 0px 10px 3px rgba(0, 0, 0, 0.27);
+cursor: pointer;
 }
 .reset-btn {
     margin-left: 10px;
@@ -189,4 +191,5 @@ box-shadow: 2px 0px 10px 3px rgba(0, 0, 0, 0.27);
     -webkit-box-shadow: 2px 0px 10px 3px rgba(0, 0, 0, 0.27); 
 -moz-box-shadow: 2px 0px 10px 3px rgba(0, 0, 0, 0.27); 
 box-shadow: 2px 0px 10px 3px rgba(0, 0, 0, 0.27);
+cursor: pointer;
   }
