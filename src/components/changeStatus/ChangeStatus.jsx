@@ -20,7 +20,7 @@ const dispatch = useDispatch()
 const handleSend= async(e)=>{
   axios({
     method:'POST',
-    url: `http://164.92.147.133:8000/set_status?product_id=${Number(id)}`,
+    url: `https://api.blackbee.uz/set_status?product_id=${Number(id)}`,
     data: obj,
     headers: {"Authorization" : `bearer ${sessionStorage.getItem('token')}`}
   }).then(res => console.log(res)).catch(e=> console.log(e))
