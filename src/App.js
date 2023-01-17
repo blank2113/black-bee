@@ -5,6 +5,7 @@ import LoginPage from "./pages/LoginPage";
 import AdminPage from "./pages/AdminPage";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { motion } from "framer-motion";
 import { DotLoader } from "react-spinners";
 
 const router = createBrowserRouter([
@@ -22,20 +23,34 @@ function App() {
 
   return (
     <div className="App">
-      {loading ? (
-        <div className="preloader">
-          <DotLoader
-            color="#000"
-            loading={loading}
-            // cssOverride={override}
-            size={150}
-            aria-label="Loading Spinner"
-            data-testid="loader"
-          />
-        </div>
-      ) : (
+      <motion.div
+        initial={{ opacity: 0, display: "none" }}
+        animate={
+          loading
+            ? { opacity: 1, display: "flex" }
+            : { opacity: 0, display: "none" }
+        }
+        className="preloader"
+      >
+        <DotLoader
+          color="#000"
+          loading={loading}
+          // cssOverride={override}
+          size={150}
+          aria-label="Loading Spinner"
+          data-testid="loader"
+        />
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, display: "none" }}
+        animate={
+          loading
+            ? { opacity: 0, display: "none" }
+            : { opacity: 1, display: "block" }
+        }
+      >
         <RouterProvider router={router} />
-      )}
+      </motion.div>
     </div>
   );
 }
