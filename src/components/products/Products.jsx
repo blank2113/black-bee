@@ -48,7 +48,7 @@ function Products({ data }) {
                   <div key={item.id}>
                     <div className="products-inner__card-wrapper">
                       <li>
-                        <img src={item.image} alt="product-img" />
+                        <img src={`https://api.blackbee.uz${item.image}`} alt="product-img" />
                         <p>{item.name}</p>
                         <span>{item.price} cум</span>
                       </li>

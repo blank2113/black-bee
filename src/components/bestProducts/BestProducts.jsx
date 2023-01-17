@@ -9,10 +9,13 @@ import { Scrollbar } from "swiper/core";
 import { Pagination, Navigation } from "swiper";
 import { textAnimation } from "../../animation/animation.js";
 
-function BestProducts({bestProducts}) {
-
+function BestProducts({ bestProducts }) {
   return (
-    <motion.section initial='hidden' whileInView='visible' className="best-products">
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      className="best-products"
+    >
       <div className="container">
         <motion.h4 variants={textAnimation} custom={2} className="title">
           Самые востребованные товары
@@ -49,7 +52,10 @@ function BestProducts({bestProducts}) {
         >
           {bestProducts.map((item) => (
             <SwiperSlide className="swiper-card" key={item.id}>
-              <img src={item.picture} alt="bestProducts-img" />
+              <img
+                src={`https://api.blackbee.uz${item.image}`}
+                alt="bestProducts-img"
+              />
               <p className="card-text">{item.name}</p>
               <p className="swiper-card__curr">{item.price} сум</p>
             </SwiperSlide>

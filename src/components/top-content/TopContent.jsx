@@ -1,33 +1,13 @@
 import "./topContent.css";
 import animals from "../../assets/img1.png";
 import { motion } from "framer-motion";
+import {useDispatch} from 'react-redux'
+import getImgValue from '../../store/slices/getImgSlice'
+import {textAnimation,imgAnimation} from '../../animation/animation.js'
 
-
-const textAnimation = {
-  hidden: {
-    x: -100,
-    opacity: 0,
-  },
-  visible: (custom) => ({
-    x: 0,
-    opacity: 1,
-    transition: { delay: custom * 0.2 },
-  }),
-};
-
-const imgAnimation = {
-  hidden: {
-    transform: { scale: 0 },
-    opacity: 0,
-  },
-  visible: custom=>({
-    transition: { delay: custom * 0.2 },
-    transform: { scale: 1 },
-    opacity: 1,
-  }),
-};
 
 function TopContent() {
+  const dispatch = useDispatch()
   return (
     <motion.section
       initial="hidden"
@@ -54,7 +34,7 @@ function TopContent() {
           </motion.a>
         </div>
         <div className="top-content-images">
-          <motion.img  custom={1} variants={imgAnimation} src={animals} alt="img" />
+          <motion.img  custom={1} variants={imgAnimation} src={animals} alt="" onLoad={()=>dispatch(getImgValue(true))}/>
         </div>
       </div>
     </motion.section>

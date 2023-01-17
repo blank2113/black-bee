@@ -14,6 +14,7 @@ import {useGetBestProductsQuery} from '../store/middlewares/bestProductApi'
 import {useGetBestSalesQuery} from '../store/middlewares/bestSalesApi'
 
 function MainPage() {
+ 
   const { data: types = [] } = useGetTypeQuery(
     {},
     { pollingInterval: 1000, refetchOnMountOrArgChange: true, skip: false }

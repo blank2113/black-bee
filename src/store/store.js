@@ -17,7 +17,7 @@ import getActiveBtnReducer from "./slices/getActiveBtn";
 import getTokenReducer from "./slices/getToken";
 import getFormDataReducer from "./slices/getFormData";
 import authReducer from "./slices/auth";
-
+import getImgReducer from "./slices/getImgSlice";
 
 
 
@@ -42,6 +42,7 @@ export const store = configureStore({
     getToken: getTokenReducer,
     getFormData: getFormDataReducer,
     auth:authReducer,
+    getImg:getImgReducer,
   },
   middleware: (getDefaultMiddleWare) =>
     getDefaultMiddleWare().concat([

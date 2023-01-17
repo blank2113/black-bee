@@ -8,6 +8,7 @@ import LoginPage from "./pages/LoginPage";
 import AdminPage from "./pages/AdminPage";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import {useSelector} from 'react-redux'
 import { DotLoader} from "react-spinners";
 
 
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
 
 function App() {
   const [loading,setLoading] = useState(false);
+  const imgStatus = useSelector(state => state.getImg.value)
  const isLoaded= ()=>{
    axios({
     method: "get",
@@ -37,7 +39,7 @@ function App() {
   },[])
   return (
     <div className="App">
-      { loading ? 
+      { loading && imgStatus !== true  ? 
       <div className="preloader">
          <DotLoader
         color='#000'
