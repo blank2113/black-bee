@@ -23,7 +23,7 @@ function App() {
  const isLoaded= ()=>{
    axios({
     method: "get",
-    url: "http://164.92.147.133:8000/product",
+    url: "https://api.blackbee.uz/product",
     // headers: { "Content-Type": "multipart/form-data" },
   })
     .then((res) =>  setLoading(false)&& console.log(res))
