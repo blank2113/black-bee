@@ -18,7 +18,7 @@ function AddCategoryPanel() {
     e.preventDefault();
     formData.append("name", categoryName);
     if (formData) {
-      await addNewCategory(formData).then((res) => console.log(res)).catch(err => console.log(err))
+      await addNewCategory(formData).then((res) => res)
     }
     dispatch(getCategoryStatus(false))
   };

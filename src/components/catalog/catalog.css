@@ -19,7 +19,7 @@
 }
 .catalog-inner__nav{
     width: 100%;
-    padding: 20px 50px;
+    padding: 15px 20px;
     background-color: #fff;
     border-radius: 66px;
     font-size: 22px;
@@ -38,9 +38,12 @@
     .catalog-inner__sub-title{
         margin: 30px 0;
     }
+    .catalog-inner{
+        padding: 70px 30px;
+    }
     .catalog-inner__nav{
         width: 100%;
-        padding: 20px 50px;
+        padding: 10px 20px;
         background-color: #fff;
         border-radius: 26px;
     }

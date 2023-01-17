@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 import "swiper/css/scrollbar";
 import { Scrollbar } from "swiper/core";
 import { Pagination, Navigation } from "swiper";
-import { textAnimation } from "../../animation/animation.js";
+
 
 function BestProducts({ bestProducts }) {
   return (
@@ -17,9 +17,9 @@ function BestProducts({ bestProducts }) {
       className="best-products"
     >
       <div className="container">
-        <motion.h4 variants={textAnimation} custom={2} className="title">
+        <h4 className="title">
           Самые востребованные товары
-        </motion.h4>
+        </h4>
         <Swiper
           slidesPerView={4}
           spaceBetween={30}

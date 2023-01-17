@@ -117,6 +117,7 @@
     .text{
       font-size: 1.3rem;
     }
+    
   }
   @media (max-width: 600px) {
     .top-content-images img {
@@ -148,6 +149,7 @@
       text-align: center;
     }
     .text{
-      font-size: 1.2rem;
+      font-size: 1rem;
+      margin: 20px 0;
     }
   }

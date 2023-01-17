@@ -6,7 +6,6 @@ import "./bestSales.css";
 import { motion} from "framer-motion";
 import { Scrollbar } from "swiper/core";
 import { Pagination, Navigation } from "swiper";
-import { textAnimation } from "../../animation/animation.js";
 
 function BestSales({bestSales}) {
   return (
@@ -16,9 +15,9 @@ function BestSales({bestSales}) {
       className="best-sales"
     >
       <div className="container">
-        <motion.h5 variants={textAnimation} custom={2} className="title">
+        <h5 className="title">
           Успейте купить по лучшей цене!
-        </motion.h5>
+        </h5>
         <Swiper
           slidesPerView={4}
           spaceBetween={30}

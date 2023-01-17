@@ -5,7 +5,7 @@ import { faBarsStaggered } from "@fortawesome/free-solid-svg-icons";
 import Menu from "../menu/Menu";
 import Products from "../products/Products";
 import SubMenu from "../SubMenu/SubMenu";
-import {blockAnimation2, textAnimation} from '../../animation/animation.js'
+import {blockAnimation2} from '../../animation/animation.js'
 
 
 
@@ -19,22 +19,21 @@ function Catalog({ types, animals, products }) {
       id="goods"
     >
       <div className="catalog-inner container">
-        <motion.h2 variants={textAnimation} custom={2} className="title">
+        <h2  className="title">
           Лучшие зоотовары по лучшим ценам
-        </motion.h2>
-        <motion.div
-          custom={3}
-          variants={blockAnimation2}
+        </h2>
+        <div
+        
           className="catalog-inner__sub-title"
         >
           <p>Каталог</p>
           <FontAwesomeIcon icon={faBarsStaggered} />
-        </motion.div>
+        </div>
         <div className="catalog-inner__nav">
           <Menu animals={animals} />
         </div>
         <SubMenu types={types} />
-        <div>
+        <div >
           <Products data={products} />
         </div>
       </div>

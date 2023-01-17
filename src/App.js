@@ -4,7 +4,6 @@ import MainPage from "./pages/MainPage";
 import LoginPage from "./pages/LoginPage";
 import AdminPage from "./pages/AdminPage";
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { motion } from "framer-motion";
 import { DotLoader } from "react-spinners";
 
@@ -16,10 +15,12 @@ const router = createBrowserRouter([
 
 function App() {
   const [loading, setLoading] = useState(true);
-
-  setTimeout(() => {
-    setLoading(false);
-  }, 5000);
+  useEffect(()=>{
+    setTimeout(() => {
+      setLoading(false);
+    }, 5000);
+  },[])
+  
 
   return (
     <div className="App">

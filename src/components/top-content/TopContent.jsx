@@ -1,13 +1,10 @@
 import "./topContent.css";
 import animals from "../../assets/img1.png";
 import { motion } from "framer-motion";
-import {useDispatch} from 'react-redux'
-import getImgValue from '../../store/slices/getImgSlice'
 import {textAnimation,imgAnimation} from '../../animation/animation.js'
 
 
 function TopContent() {
-  const dispatch = useDispatch()
   return (
     <motion.section
       initial="hidden"
@@ -34,7 +31,7 @@ function TopContent() {
           </motion.a>
         </div>
         <div className="top-content-images">
-          <motion.img  custom={1} variants={imgAnimation} src={animals} alt="" onLoad={()=>dispatch(getImgValue(true))}/>
+          <motion.img  custom={1} variants={imgAnimation} src={animals} alt=""/>
         </div>
       </div>
     </motion.section>
