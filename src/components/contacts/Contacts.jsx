@@ -24,7 +24,7 @@ function Contacts() {
             </motion.li>
             <motion.li custom={3} variants={textAnimation} className="contacts-inner__content-list-item">
               <p className='sub-title' >Наш номер телефона:</p>
-              <a href='tel:+99897 777 77 77'>+99897 777 77 77</a>
+              <a href='tel:+998903216963'>+99890 321 69 63</a>
             </motion.li>
             <motion.li custom={4} variants={textAnimation} className="contacts-inner__content-list-item">
               <p className='sub-title'>Мы в соц. сетях:</p>
@@ -38,8 +38,8 @@ function Contacts() {
           </ul>
         </div>
         <motion.div custom={2} variants={imgAnimation} className="map">
-          <YMaps className="ymap" style={{ width: '600px', height: '240px'}}>
-            <Map defaultState={defaultState} style={{ width: '600px', height: '240px' }} className="as">
+          <YMaps className="ymap" style={{ width: '600px', height: '240px', borderRadius: "20px"}}>
+            <Map defaultState={defaultState} style={{ width: '600px', height: '240px',borderRadius: "20px" }} className="as">
               <Placemark geometry={[41.250029, 69.302070]}/>
             </Map>
           </YMaps>
