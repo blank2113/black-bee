@@ -1,17 +1,11 @@
 import "./App.css";
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainPage from "./pages/MainPage";
 import LoginPage from "./pages/LoginPage";
 import AdminPage from "./pages/AdminPage";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import {useSelector} from 'react-redux'
-import { DotLoader} from "react-spinners";
-
-
+import { DotLoader } from "react-spinners";
 
 const router = createBrowserRouter([
   { path: "/", element: <MainPage /> },
@@ -20,39 +14,28 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  const [loading,setLoading] = useState(false);
-  const imgStatus = useSelector(state => state.getImg.value)
- const isLoaded= ()=>{
-   axios({
-    method: "get",
-    url: "https://api.blackbee.uz/product",
-    // headers: { "Content-Type": "multipart/form-data" },
-  })
-    .then((res) =>  setLoading(false)&& console.log(res))
-    .catch((e) => console.log(e));
-};
-  
+  const [loading, setLoading] = useState(true);
 
-  useEffect( ()=>{
-    setLoading(true)
-    isLoaded()
-  },[])
+  setTimeout(() => {
+    setLoading(false);
+  }, 5000);
+
   return (
     <div className="App">
-      { loading && imgStatus !== true  ? 
-      <div className="preloader">
-         <DotLoader
-        color='#000'
-        loading={loading}
-        // cssOverride={override}
-        size={150}
-        aria-label="Loading Spinner"
-        data-testid="loader"
-      />
-      </div>
-       
-      : <RouterProvider router={router} />}
-        
+      {loading ? (
+        <div className="preloader">
+          <DotLoader
+            color="#000"
+            loading={loading}
+            // cssOverride={override}
+            size={150}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+          />
+        </div>
+      ) : (
+        <RouterProvider router={router} />
+      )}
     </div>
   );
 }
