@@ -20,7 +20,7 @@ function Catalog({ types, animals, products }) {
     >
       <div className="catalog-inner container">
         <h2  className="title">
-          Лучшие зоотовары по лучшим ценам
+          Лучшие зоотовары по лучшим ценам!!!
         </h2>
         {/* <div
         

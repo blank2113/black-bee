@@ -18,6 +18,7 @@ ol[class] {
 html{
   scroll-behavior: smooth;
   background-color: #FFC700;
+  font-family: 'Pacifico', cursive;
 }
 
 /* Убираем внешние отступы */
@@ -36,8 +37,20 @@ blockquote,
 dl,
 dd {
   margin: 0;
+  
 }
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  font-family: 'Pacifico', cursive;
+  font-weight: 300;
+}
+p{
+  font-family: 'Montserrat Alternates', sans-serif;
+}
 /* Выставляем основные настройки по-умолчанию для body */
 body {
   min-height: 100vh;
@@ -45,7 +58,7 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   background: linear-gradient(113.43deg, #FFC700 21.57%, #FF9900 100%);
-  font-family: 'Sofia Sans Extra Condensed', sans-serif;
+  font-family: 'Pacifico', cursive;
   font-weight: 400;
   color: #000;
   font-size: 20px;  
@@ -55,6 +68,7 @@ body {
 ul,
 ol,li {
   list-style: none;
+  font-family: 'Montserrat Alternates', sans-serif;
 }
 
 /* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
@@ -62,6 +76,7 @@ a {
   text-decoration-skip-ink: auto;
   text-decoration: none;
   color: inherit;
+  font-family: 'Montserrat Alternates', sans-serif;
 }
 
 /* Упрощаем работу с изображениями */
@@ -121,4 +136,14 @@ select {
 }
 
 
-@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;500&display=swap');
+
+@media (max-width: 768px) {
+  ::-webkit-scrollbar{
+    display: none;
+  }
+  ::-webkit-scrollbar-thumb {
+   display: none;
+  }
+}

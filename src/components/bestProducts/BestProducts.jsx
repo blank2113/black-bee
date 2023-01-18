@@ -6,8 +6,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/scrollbar";
 import { Scrollbar } from "swiper/core";
-import { Pagination, Navigation } from "swiper";
-
+import { Pagination, Navigation} from "swiper";
 
 function BestProducts({ bestProducts }) {
   return (
@@ -17,9 +16,7 @@ function BestProducts({ bestProducts }) {
       className="best-products"
     >
       <div className="container">
-        <h4 className="title">
-          Самые востребованные товары
-        </h4>
+        <h4 className="title">Самые востребованные товары</h4>
         <Swiper
           slidesPerView={4}
           spaceBetween={30}
