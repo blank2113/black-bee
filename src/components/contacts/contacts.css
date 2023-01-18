@@ -11,7 +11,9 @@
     background-color: #fff;
     width: 620px;
     height: 270px;
-    border-radius: 25px;
+    border-radius: 25px !important;
+    -webkit-border-radius:25px !important;
+    -moz-border-radius: 25px !important;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -51,6 +53,8 @@
 }
 .ymaps-2-1-79-inner-panes{
     border-radius: 25px !important;
+    -webkit-border-radius:25px !important;
+    -moz-border-radius: 25px !important;
 }
 @media (max-width: 1200px){
     .map{
