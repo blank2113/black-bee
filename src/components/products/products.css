@@ -47,7 +47,7 @@
 }
 
 .products-inner__card-wrapper li img{
-    width: 130px;
+    width: 180px;
     height: auto;
 }
 .products-inner__card-wrapper li p{
@@ -95,7 +95,7 @@
         font-size: 16px;
     }
     .products-inner__card-wrapper li img{
-        width: 100px;
+        width: 140px;
     }
     .products-inner__card-wrapper li{
         width: 250px;
@@ -122,7 +122,7 @@
         font-size: 16px;
     }
     .products-inner__card-wrapper li img{
-        width: 100px;
+        width: 120px;
         height: auto;
     }
     .products-inner__card-wrapper{

@@ -14,6 +14,7 @@
     border-radius: 25px !important;
     -webkit-border-radius:25px !important;
     -moz-border-radius: 25px !important;
+    -khtml-border-radius:25px !important;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -55,6 +56,7 @@
     border-radius: 25px !important;
     -webkit-border-radius:25px !important;
     -moz-border-radius: 25px !important;
+    -khtml-border-radius:25px !important;
 }
 @media (max-width: 1200px){
     .map{

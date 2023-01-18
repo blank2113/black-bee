@@ -1,5 +1,5 @@
 import "./topContent.css";
-import animals from "../../assets/img1.png";
+import animals from "../../assets/bb-PhotoRoom.png-PhotoRoom.png";
 import { motion } from "framer-motion";
 import {textAnimation,imgAnimation} from '../../animation/animation.js'
 
