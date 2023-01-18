@@ -8,7 +8,7 @@
   }
 .swiper-horizontal>.swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
     background-color: #fff !important;
-    width: 90% !important;
+    max-width: 90% !important;
     height: 10px !important;
     margin-left: 4%;
 }
@@ -135,9 +135,9 @@
     .swiper-card__prev{
       font-size: 16px;
     }
-    .swiper-scrollbar-drag{
-      width: 120px !important;
-    }
+    /* .swiper-scrollbar-drag{
+      width: 100px !important;
+    } */
   }
   @media (max-width: 420px){
     /* .swiper-card img{

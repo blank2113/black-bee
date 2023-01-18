@@ -21,7 +21,7 @@ function BestProducts({ bestProducts }) {
           slidesPerView={4}
           spaceBetween={30}
           cssMode={true}
-          scrollbar={{ draggable: true, dragSize: 240 }}
+          scrollbar={{ draggable: true}}
           navigation={true}
           modules={[Pagination, Navigation, Scrollbar]}
           breakpoints={{
