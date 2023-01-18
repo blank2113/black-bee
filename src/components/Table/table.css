@@ -41,4 +41,8 @@
     overflow: auto;
     padding: 10px;
   }
+  .table table {
+    width: 100%;
+    height: auto;
+  }
 }
