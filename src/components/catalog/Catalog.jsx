@@ -22,13 +22,13 @@ function Catalog({ types, animals, products }) {
         <h2  className="title">
           Лучшие зоотовары по лучшим ценам
         </h2>
-        <div
+        {/* <div
         
           className="catalog-inner__sub-title"
         >
           <p>Каталог</p>
           <FontAwesomeIcon icon={faBarsStaggered} />
-        </div>
+        </div> */}
         <div className="catalog-inner__nav">
           <Menu animals={animals} />
         </div>
