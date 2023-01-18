@@ -83,6 +83,7 @@ function LoginPage() {
             whileTap={{ scale: 1.5, opacity: 1 }}
             whileHover={{ opacity: 1 }}
             onClick={handleAccess}
+            // onKeyPress={handleAccess}
           >
             Войти
           </motion.button>

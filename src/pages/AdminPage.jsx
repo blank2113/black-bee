@@ -66,7 +66,8 @@ function AdminPage() {
       >
         <AdminHeader />
         <motion.div className="admin-page-inner__wrapper">
-          <div className="right">
+        <div className="one">
+        <div className="right">
             <AsideMenu />
             <motion.div
               initial="hide"
@@ -81,8 +82,10 @@ function AdminPage() {
             bestProducts={bestProducts}
             bestSales={bestSales}
           />
-        </motion.div>
+        </div>
+         
         <EditPanel />
+        </motion.div>
         <ConfirmPanel active={getActivePanel} />
         <AddProdWindow
           brand={brand}

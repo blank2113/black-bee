@@ -6,6 +6,7 @@
     gap: 10px;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
   }
   .login-inner__logo {
     display: flex;

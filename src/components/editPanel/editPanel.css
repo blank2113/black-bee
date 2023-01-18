@@ -1,10 +1,11 @@
 .edit-panel {
-  position: absolute;
-  bottom: 0;
+  /* position: absolute;
+  bottom: 0; */
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   background-color: #fff;
-  width: 98vw;
+  width: 100%;
+  margin-top: 20px;
 }
 .edit-panel-inner {
   display: flex;

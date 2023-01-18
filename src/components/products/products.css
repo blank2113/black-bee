@@ -47,8 +47,8 @@
 }
 
 .products-inner__card-wrapper li img{
-    width: 180px;
-    height: auto;
+    width: 150px;
+    height: 150px;
 }
 .products-inner__card-wrapper li p{
     font-size: 20px;
@@ -96,10 +96,12 @@
     }
     .products-inner__card-wrapper li img{
         width: 140px;
+        height: 140px;
     }
     .products-inner__card-wrapper li{
-        width: 250px;
-    height: 250px;
+        width: 270px;
+    height: 270px;
+    margin: 10px;
     }
     .products-inner__card-wrapper li p{
         font-size: 16px;
@@ -123,7 +125,7 @@
     }
     .products-inner__card-wrapper li img{
         width: 120px;
-        height: auto;
+        height: 140px;
     }
     .products-inner__card-wrapper{
         padding: 0;

@@ -14,8 +14,15 @@
 .right{
     position: relative;
 }
+.one{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
 .admin-page-inner__wrapper{
     display: flex;
+    flex-direction: column;
+    /* grid-template-columns: 1fr 1fr; */
     align-items: flex-start;
     justify-content: space-between;
     width: 100%;
@@ -26,7 +33,14 @@
     .right{
         display: flex;
     }
+    .one{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+    }
     .admin-page-inner__wrapper{
         flex-direction: column;
+        height: 100%;
     }
 }
