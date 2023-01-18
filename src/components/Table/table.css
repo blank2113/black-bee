@@ -29,3 +29,16 @@
     padding: 20px;
   }
 }
+@media (max-width: 768px) {
+  .table {
+    width: 100%;
+    margin: 20px 0 0 0px;
+    flex: 1;
+    height: calc(100vh - 200px);
+    text-align: center;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: auto;
+    padding: 10px;
+  }
+}

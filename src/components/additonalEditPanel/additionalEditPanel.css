@@ -13,3 +13,9 @@
     color: rgb(230, 11, 11);
     cursor: pointer;
 }
+
+@media (max-width: 768px){
+    .additional-edit-panel__inner{
+        font-size: 12px;
+    }
+}

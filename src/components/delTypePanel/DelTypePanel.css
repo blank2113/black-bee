@@ -35,3 +35,31 @@
     font-size: 25px;
     font-weight: 500;
 }
+@media (max-width: 768px){
+    .DelTypePanel-wrapper p{
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .DelTypePanel-wrapper{
+        background-color: #fff;
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        border-radius: 20px;
+        position: relative;
+        font-size: 15px;
+    }
+    .DelTypePanel-wrapper form{
+        margin: 40px 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        font-weight: 500;
+        font-size: 20px;
+    }
+    .DelTypePanel-wrapper form select{
+       margin-left: 10px;
+    }
+}

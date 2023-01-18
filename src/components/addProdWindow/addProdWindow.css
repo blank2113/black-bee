@@ -193,3 +193,74 @@ cursor: pointer;
 box-shadow: 2px 0px 10px 3px rgba(0, 0, 0, 0.27);
 cursor: pointer;
   }
+
+  @media (max-width: 768px) {
+    .addProdWindow-inner{
+        width: 350px;
+        background-color: #fff;
+        font-size: 14px;
+        align-items: center;
+    }
+    input{
+        width: 200px;
+    }
+    select {
+        width: 200px;
+        height: 40px;
+        padding: 6px 45px 6px 15px;
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        border: none;
+        color: #000;
+        font-weight: 500;
+        background: linear-gradient(113.43deg, #FFC700 21.57%, #FF9900 100%);
+        text-indent: 0.01px;
+        text-overflow: "";
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
+      .addProdWindow-inner form .prod-price{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        font-size: 14px;
+        text-align: left;
+        font-weight: 500;
+    }
+    .addProdWindow-inner form .prod-file{
+        display: grid;
+        /* border: 1px solid #000; */
+        grid-template-columns:1fr  1fr;
+        font-size: 14px; 
+        text-align: left;
+        font-weight: 500;
+        margin-bottom: 30px;
+        /* border-radius: 20px; */
+    }
+    .addProdWindow-inner form .prod-file label{
+        display: none;
+    }
+    .create-btn {
+        background-color: #4db955;
+        border: none;
+        width: 120px;
+        color: #fff;
+        border-radius: 5px;
+        -webkit-box-shadow: 2px 0px 10px 3px rgba(0, 0, 0, 0.27); 
+      -moz-box-shadow: 2px 0px 10px 3px rgba(0, 0, 0, 0.27); 
+      box-shadow: 2px 0px 10px 3px rgba(0, 0, 0, 0.27);
+      cursor: pointer;
+      }
+      .reset-btn {
+          margin-left: 10px;
+          background-color: #ba4141;
+          border: none;
+          width: 120px;
+          color: #fff;
+          border-radius: 5px;
+          -webkit-box-shadow: 2px 0px 10px 3px rgba(0, 0, 0, 0.27); 
+      -moz-box-shadow: 2px 0px 10px 3px rgba(0, 0, 0, 0.27); 
+      box-shadow: 2px 0px 10px 3px rgba(0, 0, 0, 0.27);
+      cursor: pointer;
+        }
+  }
