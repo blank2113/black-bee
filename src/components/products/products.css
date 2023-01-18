@@ -47,8 +47,8 @@
 }
 
 .products-inner__card-wrapper li img{
-    width: 130px;
-    height: auto;
+    width: 170px;
+    height: 220px;
 }
 .products-inner__card-wrapper li p{
     font-size: 20px;
@@ -94,9 +94,9 @@
         color: #fff;
         font-size: 16px;
     }
-    .products-inner__card-wrapper li img{
+    /* .products-inner__card-wrapper li img{
         width: 100px;
-    }
+    } */
     .products-inner__card-wrapper li{
         width: 250px;
     height: 250px;
@@ -121,10 +121,10 @@
         color: #fff;
         font-size: 16px;
     }
-    .products-inner__card-wrapper li img{
+    /* .products-inner__card-wrapper li img{
         width: 100px;
         height: auto;
-    }
+    } */
     .products-inner__card-wrapper{
         padding: 0;
     }

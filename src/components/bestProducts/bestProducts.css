@@ -82,7 +82,7 @@
     background-color: #fff;
     /* width: 0% !important; */
     height: 350px !important;
-    border-radius: 27px;
+    border-radius: 27px !important;
     align-self: center;
     padding: 20px 20px;
   }
