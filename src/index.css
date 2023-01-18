@@ -17,6 +17,7 @@ ol[class] {
 
 html{
   scroll-behavior: smooth;
+  background: linear-gradient(113.43deg, #FFC700 21.57%, #FF9900 100%);
 }
 
 /* Убираем внешние отступы */
